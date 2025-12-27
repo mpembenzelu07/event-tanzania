@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Planners Tanzania | Where Dreams Become Extraordinary Reality</title>
+    <title>Event Planners Tanzania | Where Dreams Become Legendary Reality</title>
     <style>
-        /* === GOOSEBUMPS ANIMATION FRAMEWORK === */
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
-        
+        /* === GOOSEBUMPS STYLES FOR INDEX PAGE === */
         :root {
             --gold: #D4AF37;
             --gold-glow: rgba(212, 175, 55, 0.3);
@@ -20,7 +18,6 @@
             --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             --transition-medium: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             --shadow-gold: 0 0 40px var(--gold-glow);
-            --text-glow: 0 0 20px rgba(212, 175, 55, 0.5);
         }
         
         * {
@@ -31,16 +28,14 @@
         
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: var(--midnight);
             color: var(--ivory);
             overflow-x: hidden;
             line-height: 1.7;
-            position: relative;
         }
         
         body::before {
@@ -52,70 +47,8 @@
             height: 100%;
             background: 
                 radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.03) 0%, transparent 40%),
-                radial-gradient(circle at 80% 70%, rgba(196, 30, 58, 0.03) 0%, transparent 40%),
-                url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(212,175,55,0.02)" stroke-width="1"/></svg>');
-            background-size: cover, cover, 100px 100px;
+                radial-gradient(circle at 80% 70%, rgba(196, 30, 58, 0.03) 0%, transparent 40%);
             z-index: -1;
-            pointer-events: none;
-        }
-        
-        /* === GOOSEBUMPS TYPOGRAPHY === */
-        h1, h2, h3, h4, .display-font {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            line-height: 1.2;
-        }
-        
-        h1 {
-            font-size: 5.5rem;
-            background: linear-gradient(45deg, var(--ivory) 30%, var(--gold) 70%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: var(--text-glow);
-            margin-bottom: 1.5rem;
-            position: relative;
-            animation: textReveal 1.5s ease-out forwards;
-            opacity: 0;
-        }
-        
-        @keyframes textReveal {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        h2 {
-            font-size: 3.5rem;
-            color: var(--ivory);
-            position: relative;
-            margin-bottom: 3rem;
-            padding-bottom: 1.5rem;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--deep-red));
-            animation: lineExtend 1s ease-out 0.5s forwards;
-            transform-origin: left;
-            transform: scaleX(0);
-        }
-        
-        @keyframes lineExtend {
-            to {
-                transform: scaleX(1);
-            }
         }
         
         /* === MAGICAL HEADER === */
@@ -125,15 +58,10 @@
             left: 0;
             width: 100%;
             z-index: 10000;
-            background: rgba(10, 10, 15, 0.9);
-            backdrop-filter: blur(15px);
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
             transition: var(--transition-slow);
-        }
-        
-        .magical-header.scrolled {
-            background: rgba(10, 10, 15, 0.98);
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
         }
         
         .header-container {
@@ -149,7 +77,7 @@
         .logo-magic {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
         
         .logo-orb {
@@ -159,7 +87,6 @@
             border-radius: 50%;
             position: relative;
             animation: orbPulse 4s ease-in-out infinite;
-            box-shadow: var(--shadow-gold);
         }
         
         @keyframes orbPulse {
@@ -167,116 +94,118 @@
             50% { transform: scale(1.05); }
         }
         
-        .logo-orb::after {
-            content: '';
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            width: 15px;
-            height: 15px;
-            background: var(--ivory);
-            border-radius: 50%;
-            filter: blur(2px);
-        }
-        
         .logo-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
+            font-family: 'Georgia', serif;
+            font-size: 28px;
             font-weight: 700;
             background: linear-gradient(45deg, var(--gold), var(--ivory));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            letter-spacing: 2px;
         }
         
         .magic-nav {
             display: flex;
-            gap: 50px;
+            gap: 40px;
         }
         
         .magic-nav a {
             color: var(--light-gold);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            font-weight: 600;
+            font-size: 15px;
             padding: 10px 0;
             position: relative;
             transition: var(--transition-medium);
         }
         
-        .magic-nav a::before {
+        .magic-nav a:hover {
+            color: var(--gold);
+        }
+        
+        .magic-nav a.active {
+            color: var(--gold);
+        }
+        
+        .magic-nav a::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            height: 2px;
+            background: var(--gold);
             transition: var(--transition-medium);
         }
         
-        .magic-nav a:hover::before {
+        .magic-nav a:hover::after,
+        .magic-nav a.active::after {
             width: 100%;
-        }
-        
-        .magic-nav a:hover {
-            color: var(--gold);
-            text-shadow: 0 0 15px var(--gold-glow);
         }
         
         /* === BREATHTAKING HERO === */
         .hero-goosebumps {
             min-height: 100vh;
-            position: relative;
+            background: linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.7)),
+                        url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
-            padding-top: 100px;
-            overflow: hidden;
+            padding: 100px 40px 0;
+            position: relative;
         }
         
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            padding: 0 40px;
             text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, var(--ivory), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .hero-tagline {
             font-size: 1.3rem;
             color: var(--light-gold);
             margin-bottom: 2rem;
-            font-weight: 300;
             letter-spacing: 2px;
-            text-transform: uppercase;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.3s forwards;
         }
         
         .hero-description {
             font-size: 1.2rem;
-            color: rgba(255, 253, 245, 0.8);
+            color: rgba(255, 253, 245, 0.9);
             max-width: 700px;
             margin: 0 auto 3rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.6s forwards;
         }
         
         .magic-buttons {
             display: flex;
             gap: 25px;
             justify-content: center;
-            opacity: 0;
-            animation: fadeInUp 1s ease 0.9s forwards;
         }
         
         .btn-magic {
             padding: 18px 45px;
-            font-size: 1rem;
+            font-size: 16px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1.5px;
@@ -284,8 +213,8 @@
             border-radius: 50px;
             cursor: pointer;
             transition: var(--transition-medium);
-            position: relative;
-            overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-primary {
@@ -299,21 +228,6 @@
             box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
         }
         
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: 0.8s;
-        }
-        
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-        
         .btn-secondary {
             background: transparent;
             border: 2px solid var(--gold);
@@ -323,128 +237,78 @@
         .btn-secondary:hover {
             background: var(--gold);
             color: var(--midnight);
-            box-shadow: 0 0 30px var(--gold-glow);
         }
         
-        /* === FLOATING PARTICLES EFFECT === */
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
+        /* === SERVICES PREVIEW === */
+        .services-preview {
+            padding: 120px 40px;
+            background: rgba(26, 26, 31, 0.5);
         }
         
-        .particle {
-            position: absolute;
-            background: var(--gold);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: floatParticle linear infinite;
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
         }
         
-        @keyframes floatParticle {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-                opacity: 0;
-            }
+        .section-title h2 {
+            font-size: 3rem;
+            color: var(--ivory);
+            margin-bottom: 20px;
         }
         
-        /* === SERVICES THAT INSPIRE AWE === */
-        .services-awe {
-            padding: 150px 0;
-            position: relative;
-        }
-        
-        .service-cards {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 50px;
-            margin-top: 70px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .service-card-magic {
             background: rgba(26, 26, 31, 0.7);
             border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 20px;
+            border-radius: 15px;
             padding: 50px 40px;
-            position: relative;
-            overflow: hidden;
             transition: var(--transition-slow);
-        }
-        
-        .service-card-magic::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
-            transition: 0.8s;
-        }
-        
-        .service-card-magic:hover::before {
-            left: 100%;
         }
         
         .service-card-magic:hover {
             transform: translateY(-20px);
-            border-color: rgba(212, 175, 55, 0.3);
+            border-color: var(--gold);
             box-shadow: var(--shadow-gold);
         }
         
         .service-icon-magic {
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--gold);
             margin-bottom: 30px;
-            display: inline-block;
-            animation: iconFloat 3s ease-in-out infinite;
-        }
-        
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
         
         .service-content h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
             color: var(--ivory);
+            margin-bottom: 20px;
         }
         
-        /* === PORTFOLIO THAT TELLS STORIES === */
-        .portfolio-magic {
-            padding: 150px 0;
-            background: rgba(10, 10, 15, 0.5);
-            position: relative;
+        /* === PORTFOLIO PREVIEW === */
+        .portfolio-preview {
+            padding: 120px 40px;
+            background: rgba(10, 10, 15, 0.8);
         }
         
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 40px;
-            margin-top: 70px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .portfolio-item-magic {
-            height: 400px;
-            border-radius: 15px;
+            height: 300px;
+            border-radius: 10px;
             overflow: hidden;
             position: relative;
-            cursor: pointer;
         }
         
         .portfolio-item-magic img {
@@ -454,77 +318,23 @@
             transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
         
-        .portfolio-overlay-magic {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(10, 10, 15, 0.95), transparent);
-            padding: 50px 40px 40px;
-            transform: translateY(100%);
-            transition: var(--transition-slow);
-        }
-        
-        .portfolio-item-magic:hover .portfolio-overlay-magic {
-            transform: translateY(0);
-        }
-        
         .portfolio-item-magic:hover img {
             transform: scale(1.1);
         }
         
-        .event-category {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--midnight);
-            padding: 8px 25px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-        }
-        
-        /* === TESTIMONIALS THAT TOUCH SOULS === */
+        /* === TESTIMONIALS === */
         .testimonials-magic {
-            padding: 150px 0;
-            position: relative;
-        }
-        
-        .testimonial-slider {
-            max-width: 900px;
-            margin: 70px auto 0;
-            position: relative;
+            padding: 120px 40px;
+            background: rgba(26, 26, 31, 0.5);
         }
         
         .testimonial-card {
             background: rgba(26, 26, 31, 0.7);
             border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 20px;
-            padding: 60px;
-            position: relative;
-            display: none;
-            animation: testimonialFade 0.8s ease;
-        }
-        
-        @keyframes testimonialFade {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .testimonial-card.active {
-            display: block;
-        }
-        
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 30px;
-            left: 40px;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 8rem;
-            color: rgba(212, 175, 55, 0.1);
-            line-height: 1;
+            border-radius: 15px;
+            padding: 50px;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .testimonial-text {
@@ -532,24 +342,21 @@
             line-height: 1.8;
             font-style: italic;
             color: var(--light-gold);
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 30px;
         }
         
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
         
         .author-avatar {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid var(--gold);
-            box-shadow: 0 0 20px var(--gold-glow);
+            border: 2px solid var(--gold);
         }
         
         .author-avatar img {
@@ -558,126 +365,34 @@
             object-fit: cover;
         }
         
-        /* === CONTACT THAT FEELS PERSONAL === */
-        .contact-magic {
-            padding: 150px 0;
-            position: relative;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-top: 70px;
-        }
-        
-        .contact-info-magic {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .contact-item-magic {
-            background: rgba(26, 26, 31, 0.7);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: var(--transition-medium);
-        }
-        
-        .contact-item-magic:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-gold);
-        }
-        
-        .contact-icon-magic {
-            font-size: 2.5rem;
-            color: var(--gold);
-            margin-bottom: 20px;
-            display: inline-block;
-            animation: iconPulse 2s ease-in-out infinite;
-        }
-        
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        
-        .contact-form-magic {
-            background: rgba(26, 26, 31, 0.7);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            border-radius: 20px;
-            padding: 60px;
-        }
-        
-        .form-group-magic {
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .form-group-magic label {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--light-gold);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-        
-        .form-control-magic {
-            width: 100%;
-            padding: 18px 25px;
-            background: rgba(255, 253, 245, 0.05);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 10px;
-            color: var(--ivory);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition-medium);
-        }
-        
-        .form-control-magic:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 20px var(--gold-glow);
-            background: rgba(255, 253, 245, 0.08);
-        }
-        
-        /* === FOOTER THAT STAYS WITH YOU === */
+        /* === FOOTER === */
         .footer-magic {
             background: rgba(10, 10, 15, 0.95);
             border-top: 1px solid rgba(212, 175, 55, 0.1);
-            padding: 100px 0 50px;
-            position: relative;
+            padding: 80px 40px 30px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 60px;
-            margin-bottom: 70px;
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
         }
         
         .footer-logo-section .logo-text {
-            font-size: 2.5rem;
+            font-size: 24px;
             margin-bottom: 20px;
         }
         
         .footer-description {
             color: rgba(255, 253, 245, 0.7);
-            line-height: 1.8;
-            margin-top: 20px;
         }
         
         .footer-links h3 {
             color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            font-size: 18px;
+            margin-bottom: 25px;
         }
         
         .footer-links ul {
@@ -685,150 +400,90 @@
         }
         
         .footer-links li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .footer-links a {
             color: rgba(255, 253, 245, 0.7);
             text-decoration: none;
             transition: var(--transition-medium);
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
         .footer-links a:hover {
             color: var(--gold);
-            padding-left: 10px;
-            text-shadow: 0 0 10px var(--gold-glow);
+            padding-left: 5px;
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 50px;
+            padding-top: 30px;
             border-top: 1px solid rgba(212, 175, 55, 0.1);
             color: rgba(255, 253, 245, 0.5);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 14px;
         }
         
-        /* === RESPONSIVE DESIGN === */
+        /* === RESPONSIVE === */
         @media (max-width: 1200px) {
-            h1 { font-size: 4.5rem; }
-            h2 { font-size: 3rem; }
-            .contact-container { grid-template-columns: 1fr; gap: 60px; }
-            .footer-content { grid-template-columns: repeat(2, 1fr); }
+            .services-grid,
+            .portfolio-grid,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
         }
         
         @media (max-width: 768px) {
-            h1 { font-size: 3.5rem; }
-            h2 { font-size: 2.5rem; }
-            .header-container { padding: 0 20px; height: 80px; }
-            .magic-nav { display: none; }
-            .service-cards, .portfolio-grid { grid-template-columns: 1fr; }
-            .magic-buttons { flex-direction: column; align-items: center; }
-            .contact-info-magic { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; gap: 40px; }
-        }
-        
-        /* === MOBILE MENU === */
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.8rem;
-            color: var(--gold);
-            cursor: pointer;
-            transition: var(--transition-medium);
-        }
-        
-        @media (max-width: 768px) {
-            .mobile-menu-btn { display: block; }
+            .services-grid,
+            .portfolio-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                padding: 0 20px;
+                height: 80px;
+            }
+            
             .magic-nav {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: rgba(10, 10, 15, 0.98);
-                backdrop-filter: blur(20px);
+                display: none;
+            }
+            
+            .magic-buttons {
                 flex-direction: column;
                 align-items: center;
-                justify-content: flex-start;
-                padding: 50px 20px;
-                transition: var(--transition-slow);
-                gap: 30px;
             }
-            .magic-nav.active {
-                left: 0;
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
             }
-        }
-        
-        /* === VISITOR COUNTER (PSYCHOLOGICAL TRIGGER) === */
-        .visitor-counter {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(212, 175, 55, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 50px;
-            padding: 12px 25px;
-            font-size: 0.9rem;
-            color: var(--light-gold);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            animation: counterPulse 3s ease-in-out infinite;
-        }
-        
-        @keyframes counterPulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.2); }
-            50% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
-        }
-        
-        .counter-number {
-            font-weight: 700;
-            color: var(--gold);
-            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
-    <!-- Visitor Counter (Psychological Engagement) -->
-    <div class="visitor-counter">
-        <i class="fas fa-eye"></i>
-        <span class="counter-number" id="visitorCount">1,247</span> people are exploring
-    </div>
-
     <!-- Magical Header -->
-    <header class="magical-header" id="header">
+    <header class="magical-header">
         <div class="header-container">
             <div class="logo-magic">
                 <div class="logo-orb"></div>
                 <div class="logo-text">Event Planners Tanzania</div>
             </div>
             
-            <div class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </div>
-            
-            <nav class="magic-nav" id="magicNav">
-                <a href="#home" class="active">Home</a>
-                <a href="#services">Services</a>
-                <a href="#portfolio">Portfolio</a>
-                <a href="#testimonials">Stories</a>
-                <a href="#contact">Begin Journey</a>
-                <a href="tel:+255789456123" class="btn-secondary" style="padding: 12px 30px;">
-                    <i class="fas fa-phone"></i> +255 789 456 123
-                </a>
+            <nav class="magic-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section That Takes Breath Away -->
-    <section class="hero-goosebumps" id="home">
-        <div class="particles" id="particles"></div>
-        
+    <!-- Hero Section -->
+    <section class="hero-goosebumps">
         <div class="hero-content">
             <h1>Where Moments Become<br>Legendary Stories</h1>
             <div class="hero-tagline">Tanzania's Most Extraordinary Event Experience</div>
@@ -839,570 +494,190 @@
             </p>
             
             <div class="magic-buttons">
-                <a href="#contact" class="btn-magic btn-primary">
-                    <i class="fas fa-sparkles"></i> Begin Your Legend
+                <a href="booking.html" class="btn-magic btn-primary">
+                    Begin Your Legend
                 </a>
-                <a href="#portfolio" class="btn-magic btn-secondary">
-                    <i class="fas fa-play-circle"></i> Watch The Magic
-                </a>
-            </div>
-            
-            <div style="margin-top: 60px; color: rgba(255,253,245,0.5); font-size: 0.9rem; letter-spacing: 2px;">
-                <i class="fas fa-chevron-down fa-bounce" style="margin-right: 10px;"></i>
-                SCROLL TO FEEL THE MAGIC
-            </div>
-        </div>
-    </section>
-
-    <!-- Services That Inspire -->
-    <section class="services-awe" id="services">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
-            <h2>We Don't Just Plan Events<br>We Engineer Emotions</h2>
-            
-            <div class="service-cards">
-                <!-- Wedding Magic -->
-                <div class="service-card-magic">
-                    <div class="service-icon-magic">
-                        <i class="fas fa-heart-circle-bolt"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Weddings That Feel Like Fairytales</h3>
-                        <p>We transform "I do" into "I'll remember this forever." Every kiss, every tear, 
-                        every smile—orchestrated to perfection.</p>
-                        <ul style="margin-top: 20px; list-style: none;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,253,245,0.1);">
-                                <i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i>
-                                Venue Selection That Steals Breath
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,253,245,0.1);">
-                                <i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i>
-                                Details That Tell Your Love Story
-                            </li>
-                            <li style="padding: 8px 0;">
-                                <i class="fas fa-star" style="color: var(--gold); margin-right: 10px;"></i>
-                                Memories That Time Cannot Fade
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Corporate Excellence -->
-                <div class="service-card-magic">
-                    <div class="service-icon-magic">
-                        <i class="fas fa-chess-queen"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Corporate Events That Command Respect</h3>
-                        <p>Where business meets brilliance. We create environments where deals are born, 
-                        partnerships flourish, and brands become legends.</p>
-                        <ul style="margin-top: 20px; list-style: none;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,253,245,0.1);">
-                                <i class="fas fa-crown" style="color: var(--gold); margin-right: 10px;"></i>
-                                Boardroom to Ballroom Excellence
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,253,245,0.1);">
-                                <i class="fas fa-crown" style="color: var(--gold); margin-right: 10px;"></i>
-                                Brand Experiences That Resonate
-                            </li>
-                            <li style="padding: 8px 0;">
-                                <i class="fas fa-crown" style="color: var(--gold); margin-right: 10px;"></i>
-                                Networking That Builds Empires
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Private Celebrations -->
-                <div class="service-card-magic">
-                    <div class="service-icon-magic">
-                        <i class="fas fa-champagne-glasses"></i>
-                    </div>
-                    <div class="service-content">
-                        <h3>Private Moments That Become Family Lore</h3>
-                        <p>Birthdays, anniversaries, milestones—we turn personal celebrations into 
-                        chapters of your family's history book.</p>
-                        <ul style="margin-top: 20px; list-style: none;">
-                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,253,245,0.1);">
-                                <i class="fas fa-gem" style="color: var(--gold); margin-right: 10px;"></i>
-                                Intimate Gatherings With Grand Impact
-                            </li>
-                            <li style="padding: 8px 0; border-bottom: 1px solid rgba(255,253,245,0.1);">
-                                <i class="fas fa-gem" style="color: var(--gold); margin-right: 10px;"></i>
-                                Personalized Touches That Speak Volumes
-                            </li>
-                            <li style="padding: 8px 0;">
-                                <i class="fas fa-gem" style="color: var(--gold); margin-right: 10px;"></i>
-                                Memories For Generations To Come
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio That Tells Stories -->
-    <section class="portfolio-magic" id="portfolio">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
-            <h2>Every Picture Holds A<br>Heartbeat Of Emotion</h2>
-            
-            <div class="portfolio-grid">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item-magic">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Magical Wedding">
-                    <div class="portfolio-overlay-magic">
-                        <span class="event-category">EPIC WEDDING</span>
-                        <h3 style="color: var(--ivory); font-size: 1.8rem; margin-bottom: 10px;">
-                            Zanzibar Sunset Union
-                        </h3>
-                        <p style="color: rgba(255,253,245,0.8);">
-                            Where the Indian Ocean whispered blessings to 150 souls witnessing love's promise
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item-magic">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Corporate Excellence">
-                    <div class="portfolio-overlay-magic">
-                        <span class="event-category">CORPORATE LEGEND</span>
-                        <h3 style="color: var(--ivory); font-size: 1.8rem; margin-bottom: 10px;">
-                            Tech Titan Summit
-                        </h3>
-                        <p style="color: rgba(255,253,245,0.8);">
-                            Where 500 visionaries shaped Tanzania's digital destiny under one roof
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item-magic">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Private Celebration">
-                    <div class="portfolio-overlay-magic">
-                        <span class="event-category">FAMILY LEGACY</span>
-                        <h3 style="color: var(--ivory); font-size: 1.8rem; margin-bottom: 10px;">
-                            Golden Anniversary Gala
-                        </h3>
-                        <p style="color: rgba(255,253,245,0.8);">
-                            Where 50 years of love danced through an enchanted garden
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 70px;">
-                <a href="#contact" class="btn-magic btn-primary" style="padding: 20px 60px; font-size: 1.1rem;">
-                    <i class="fas fa-play"></i> LET'S WRITE YOUR STORY
+                <a href="portfolio.html" class="btn-magic btn-secondary">
+                    View Our Magic
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials That Touch Souls -->
-    <section class="testimonials-magic" id="testimonials">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
-            <h2>Echoes Of Joy From<br>Hearts We've Touched</h2>
-            
-            <div class="testimonial-slider">
-                <div class="testimonial-card active">
-                    <div class="testimonial-text">
-                        "I thought I knew what 'magical' meant until Event Planners Tanzania redefined it. 
-                        Our wedding wasn't just an event—it was an emotional journey that still gives me 
-                        goosebumps when I remember it. They didn't just plan a day; they crafted the 
-                        most beautiful memory of our lives."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
-                        </div>
-                        <div>
-                            <h4 style="color: var(--gold); font-size: 1.3rem;">Sarah & James</h4>
-                            <div style="color: rgba(255,253,245,0.7);">Wedding Clients</div>
-                            <div style="color: rgba(212, 175, 55, 0.8); margin-top: 5px;">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="section-title">
+            <h2>Our Legendary Services</h2>
+            <p style="color: rgba(255, 253, 245, 0.7);">Crafting unforgettable experiences</p>
         </div>
-    </section>
-
-    <!-- Contact That Feels Like A New Beginning -->
-    <section class="contact-magic" id="contact">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
-            <h2>Your Extraordinary Story<br>Begins With A Conversation</h2>
-            
-            <div class="contact-container">
-                <div class="contact-info-magic">
-                    <div class="contact-item-magic">
-                        <div class="contact-icon-magic">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h4 style="color: var(--ivory); margin-bottom: 10px;">Our Sanctuary</h4>
-                        <p style="color: rgba(255,253,245,0.8);">
-                            Plot 123, Mlimani City<br>
-                            Dar es Salaam, Tanzania
-                        </p>
-                    </div>
-                    
-                    <div class="contact-item-magic">
-                        <div class="contact-icon-magic">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h4 style="color: var(--ivory); margin-bottom: 10px;">Whisper To Us</h4>
-                        <p style="color: rgba(255,253,245,0.8);">
-                            +255 789 456 123<br>
-                            +255 654 321 987
-                        </p>
-                    </div>
-                    
-                    <div class="contact-item-magic">
-                        <div class="contact-icon-magic">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h4 style="color: var(--ivory); margin-bottom: 10px;">Send A Dream</h4>
-                        <p style="color: rgba(255,253,245,0.8);">
-                            info@eventplannerstanzania.co.tz<br>
-                            dreams@eventplannerstanzania.co.tz
-                        </p>
-                    </div>
-                    
-                    <div class="contact-item-magic">
-                        <div class="contact-icon-magic">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h4 style="color: var(--ivory); margin-bottom: 10px;">When Magic Happens</h4>
-                        <p style="color: rgba(255,253,245,0.8);">
-                            24/7 For Dreams<br>
-                            Always For Magic
-                        </p>
-                    </div>
+        
+        <div class="services-grid">
+            <div class="service-card-magic">
+                <div class="service-icon-magic">
+                    <i class="fas fa-heart"></i>
                 </div>
-                
-                <div class="contact-form-magic">
-                    <h3 style="color: var(--gold); margin-bottom: 30px; font-size: 1.8rem;">
-                        Tell Us Your Vision
-                    </h3>
-                    
-                    <form id="magicForm">
-                        <div class="form-group-magic">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control-magic" placeholder="How may we address your dream?" required>
-                        </div>
-                        
-                        <div class="form-group-magic">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control-magic" placeholder="Where shall we send the magic?" required>
-                        </div>
-                        
-                        <div class="form-group-magic">
-                            <label for="vision">Your Vision</label>
-                            <select id="vision" class="form-control-magic" required>
-                                <option value="">What story shall we write?</option>
-                                <option value="wedding">A Love Story (Wedding)</option>
-                                <option value="corporate">A Success Story (Corporate)</option>
-                                <option value="private">A Family Story (Private)</option>
-                                <option value="other">A New Story (Other)</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group-magic">
-                            <label for="message">The Magic Details</label>
-                            <textarea id="message" class="form-control-magic" rows="5" placeholder="Paint us a picture of your extraordinary vision..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-magic btn-primary" style="width: 100%; padding: 20px; font-size: 1.1rem; margin-top: 20px;">
-                            <i class="fas fa-paper-plane"></i> RELEASE YOUR DREAM
-                        </button>
-                        
-                        <p style="text-align: center; color: rgba(255,253,245,0.5); margin-top: 20px; font-size: 0.9rem;">
-                            <i class="fas fa-lock" style="margin-right: 8px;"></i>
-                            Your vision is sacred. We treat it with the reverence it deserves.
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer That Lingers -->
-    <footer class="footer-magic">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
-            <div class="footer-content">
-                <div class="footer-logo-section">
-                    <div class="logo-text">Event Planners Tanzania</div>
-                    <p class="footer-description">
-                        We are architects of emotion, weavers of memories, and guardians of 
-                        Tanzania's most extraordinary moments. Since 2011, we've been turning 
-                        dreams into legendary reality.
+                <div class="service-content">
+                    <h3>Wedding Magic</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">
+                        Transform your wedding day into a fairytale experience that will be remembered for generations.
                     </p>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Journey With Us</h3>
-                    <ul>
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Begin The Magic</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Our Artistry</a></li>
-                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Stories Told</a></li>
-                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Echoes of Joy</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Our Craft</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Wedding Magic</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Corporate Legends</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Family Chronicles</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Custom Dreams</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Stay Enchanted</h3>
-                    <ul>
-                        <li><a href="tel:+255789456123"><i class="fas fa-phone"></i> +255 789 456 123</a></li>
-                        <li><a href="mailto:info@eventplannerstanzania.co.tz"><i class="fas fa-envelope"></i> Send A Dream</a></li>
-                        <li><a href="https://eventplannerstanzania.co.tz"><i class="fas fa-globe"></i> Our Digital Home</a></li>
-                    </ul>
+                    <a href="services.html#weddings" style="color: var(--gold); text-decoration: none; margin-top: 20px; display: inline-block;">
+                        Explore Wedding Magic →
+                    </a>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>© 2023 Event Planners Tanzania | Where Extraordinary Becomes Reality | All Rights Reserved</p>
-                <p style="margin-top: 20px; color: var(--gold); letter-spacing: 2px;">
-                    <i class="fas fa-heart" style="margin: 0 10px;"></i>
-                    CRAFTED WITH MAGIC IN TANZANIA
-                    <i class="fas fa-heart" style="margin: 0 10px;"></i>
+            <div class="service-card-magic">
+                <div class="service-icon-magic">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Corporate Excellence</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">
+                        Professional event management for conferences, product launches, and corporate celebrations.
+                    </p>
+                    <a href="services.html#corporate" style="color: var(--gold); text-decoration: none; margin-top: 20px; display: inline-block;">
+                        Explore Corporate →
+                    </a>
+                </div>
+            </div>
+            
+            <div class="service-card-magic">
+                <div class="service-icon-magic">
+                    <i class="fas fa-champagne-glasses"></i>
+                </div>
+                <div class="service-content">
+                    <h3>Private Celebrations</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">
+                        Birthdays, anniversaries, and family gatherings designed to create cherished memories.
+                    </p>
+                    <a href="services.html#private" style="color: var(--gold); text-decoration: none; margin-top: 20px; display: inline-block;">
+                        Explore Celebrations →
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="services.html" class="btn-magic btn-primary">View All Services</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Preview -->
+    <section class="portfolio-preview">
+        <div class="section-title">
+            <h2>Our Legendary Events</h2>
+            <p style="color: rgba(255, 253, 245, 0.7);">A glimpse of the magic we create</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item-magic">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Wedding">
+            </div>
+            
+            <div class="portfolio-item-magic">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Corporate">
+            </div>
+            
+            <div class="portfolio-item-magic">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Celebration">
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="portfolio.html" class="btn-magic btn-secondary">View Full Portfolio</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-magic">
+        <div class="section-title">
+            <h2>Stories of Joy</h2>
+            <p style="color: rgba(255, 253, 245, 0.7);">What our clients say about us</p>
+        </div>
+        
+        <div class="testimonial-card">
+            <div class="testimonial-text">
+                "Event Planners Tanzania transformed our wedding day into a magical experience beyond our expectations. 
+                Their attention to detail, creativity, and professionalism made the entire planning process stress-free and enjoyable."
+            </div>
+            <div class="testimonial-author">
+                <div class="author-avatar">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                </div>
+                <div>
+                    <h4 style="color: var(--gold);">Sarah & James</h4>
+                    <div style="color: rgba(255, 253, 245, 0.7);">Wedding Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-magic">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <div class="logo-text">Event Planners Tanzania</div>
+                <p class="footer-description">
+                    Creating unforgettable events across Tanzania since 2011. 
+                    We specialize in weddings, corporate events, and private celebrations.
                 </p>
             </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="services.html#weddings">Wedding Planning</a></li>
+                    <li><a href="services.html#corporate">Corporate Events</a></li>
+                    <li><a href="services.html#private">Private Celebrations</a></li>
+                    <li><a href="services.html#other">Other Services</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+255789456123">+255 789 456 123</a></li>
+                    <li><a href="mailto:info@eventplannerstanzania.co.tz">info@eventplannerstanzania.co.tz</a></li>
+                    <li><a href="contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Event Planners Tanzania. All Rights Reserved. | Website: eventplannerstanzania.co.tz</p>
         </div>
     </footer>
 
-    <!-- Scripts for Goosebumps -->
-    <script>
-        // Create floating particles
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                // Random properties
-                const size = Math.random() * 4 + 1;
-                const posX = Math.random() * 100;
-                const duration = Math.random() * 20 + 10;
-                const delay = Math.random() * 5;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}vw`;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.opacity = Math.random() * 0.5 + 0.1;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
-        // Animate counter
-        function animateCounter() {
-            const counter = document.getElementById('visitorCount');
-            let count = 1247;
-            let increment = 3;
-            
-            setInterval(() => {
-                count += increment;
-                counter.textContent = count.toLocaleString();
-                
-                // Random increment between 1-5
-                increment = Math.floor(Math.random() * 5) + 1;
-                
-                // Occasionally show "watching now"
-                if (Math.random() > 0.7) {
-                    const watching = Math.floor(Math.random() * 8) + 1;
-                    counter.parentElement.innerHTML = `
-                        <i class="fas fa-eye"></i>
-                        <span class="counter-number">${count.toLocaleString()}</span> people exploring
-                        <span style="margin-left: 10px; color: var(--gold);">
-                            <i class="fas fa-user"></i> ${watching} watching now
-                        </span>
-                    `;
-                    setTimeout(() => {
-                        counter.parentElement.innerHTML = `
-                            <i class="fas fa-eye"></i>
-                            <span class="counter-number">${count.toLocaleString()}</span> people exploring
-                        `;
-                    }, 3000);
-                }
-            }, 3000);
-        }
-        
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            // Parallax effect for hero
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero-goosebumps');
-            hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
-        });
-        
-        // Mobile menu
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const magicNav = document.getElementById('magicNav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            magicNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = magicNav.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Form submission with magical effect
-        document.getElementById('magicForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Create magical confirmation
-            const form = e.target;
-            const name = form.querySelector('#name').value;
-            
-            // Create floating hearts
-            for (let i = 0; i < 15; i++) {
-                const heart = document.createElement('div');
-                heart.innerHTML = '<i class="fas fa-heart" style="color: var(--gold);"></i>';
-                heart.style.position = 'fixed';
-                heart.style.left = `${Math.random() * 100}vw`;
-                heart.style.top = '100vh';
-                heart.style.fontSize = '24px';
-                heart.style.zIndex = '10000';
-                heart.style.animation = `floatUp ${Math.random() * 2 + 2}s ease-in forwards`;
-                document.body.appendChild(heart);
-                
-                setTimeout(() => heart.remove(), 3000);
-            }
-            
-            // Show magical message
-            const message = `
-                <div style="
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background: rgba(10, 10, 15, 0.95);
-                    border: 2px solid var(--gold);
-                    border-radius: 20px;
-                    padding: 40px;
-                    text-align: center;
-                    z-index: 10001;
-                    max-width: 500px;
-                    width: 90%;
-                    box-shadow: 0 0 50px var(--gold-glow);
-                    animation: fadeIn 0.5s ease;
-                ">
-                    <i class="fas fa-sparkles" style="font-size: 3rem; color: var(--gold); margin-bottom: 20px;"></i>
-                    <h3 style="color: var(--gold); margin-bottom: 15px;">THE MAGIC HAS BEGUN</h3>
-                    <p style="color: var(--light-gold); margin-bottom: 25px;">
-                        ${name}, your vision is now in flight. We'll be in touch within 24 hours 
-                        to begin crafting your extraordinary story.
-                    </p>
-                    <button onclick="this.parentElement.remove()" 
-                            style="background: var(--gold); color: var(--midnight); 
-                                   border: none; padding: 12px 30px; border-radius: 50px;
-                                   font-weight: bold; cursor: pointer;">
-                        CONTINUE THE JOURNEY
-                    </button>
-                </div>
-            `;
-            
-            document.body.insertAdjacentHTML('beforeend', message);
-            form.reset();
-            
-            // Add CSS for animation
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes floatUp {
-                    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-                    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
-                }
-                @keyframes fadeIn {
-                    from { opacity: 0; transform: translate(-50%, -60%); }
-                    to { opacity: 1; transform: translate(-50%, -50%); }
-                }
-            `;
-            document.head.appendChild(style);
-        });
-        
-        // Smooth scrolling with easing
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    // Close mobile menu if open
-                    if(magicNav.classList.contains('active')) {
-                        magicNav.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-            animateCounter();
-            
-            // Set current year
-            document.querySelector('.footer-bottom p').innerHTML = 
-                document.querySelector('.footer-bottom p').innerHTML.replace('2023', new Date().getFullYear());
-            
-            // Add cursor trail effect
-            document.addEventListener('mousemove', (e) => {
-                const trail = document.createElement('div');
-                trail.style.position = 'fixed';
-                trail.style.left = `${e.clientX}px`;
-                trail.style.top = `${e.clientY}px`;
-                trail.style.width = '10px';
-                trail.style.height = '10px';
-                trail.style.background = 'radial-gradient(circle, var(--gold), transparent)';
-                trail.style.borderRadius = '50%';
-                trail.style.pointerEvents = 'none';
-                trail.style.zIndex = '9999';
-                trail.style.opacity = '0.7';
-                document.body.appendChild(trail);
-                
-                setTimeout(() => {
-                    trail.style.opacity = '0';
-                    trail.style.transform = 'scale(2)';
-                    setTimeout(() => trail.remove(), 300);
-                }, 100);
-            });
-        });
-    </script>
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.magical-header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 15, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 10, 15, 0.95)';
+            }
+        });
+        
+        // Set current year
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.footer-bottom p').innerHTML = 
+                document.querySelector('.footer-bottom p').innerHTML.replace('2023', new Date().getFullYear());
+        });
+    </script>
 </body>
 </html>
