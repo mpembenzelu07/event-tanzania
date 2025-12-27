@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Event - Event Planners Tanzania</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C41E3A;
+            --primary-dark: #9a162d;
+            --secondary: #FFD166;
+            --dark: #222222;
+            --light: #f8f8f8;
+            --gray: #666666;
+            --light-gray: #eeeeee;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 10px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+        
+        h2.text-center:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(196, 30, 58, 0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--dark);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Hero */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Booking Process */
+        .booking-process {
+            background-color: white;
+        }
+        
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background-color: var(--light-gray);
+            z-index: 1;
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 15px;
+            transition: var(--transition);
+        }
+        
+        .process-step.active .step-number {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .step-title {
+            font-weight: 600;
+        }
+        
+        /* Booking Form */
+        .booking-form-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .form-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .form-body {
+            padding: 40px;
+        }
+        
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .required:after {
+            content: ' *';
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+        
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .calendar-container {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+        
+        .calendar-day {
+            text-align: center;
+            padding: 10px 5px;
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .calendar-date {
+            text-align: center;
+            padding: 12px 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .calendar-date:hover {
+            background-color: #ddd;
+        }
+        
+        .calendar-date.selected {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .calendar-date.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .calendar-date.disabled:hover {
+            background-color: transparent;
+        }
+        
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .time-slot {
+            padding: 12px;
+            border: 2px solid var(--light-gray);
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .time-slot:hover {
+            border-color: var(--primary);
+        }
+        
+        .time-slot.selected {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .package-summary {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-top: 2px solid var(--dark);
+            margin-top: 10px;
+        }
+        
+        /* Confirmation */
+        .confirmation {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .confirmation-icon {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Event<span>Planners</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="booking.html" class="active">Book Now</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Book Your Event</h1>
+            <p>Start planning your perfect event with our easy booking process</p>
+        </div>
+    </section>
+
+    <!-- Booking Process -->
+    <section class="booking-process">
+        <div class="container">
+            <div class="process-steps">
+                <div class="process-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Event Details</div>
+                </div>
+                <div class="process-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Date & Time</div>
+                </div>
+                <div class="process-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Package Selection</div>
+                </div>
+                <div class="process-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Confirmation</div>
+                </div>
+            </div>
+            
+            <div class="booking-form-container">
+                <div class="form-header">
+                    <h2>Event Booking Form</h2>
+                    <p>Complete the form below to request a consultation and reserve your event date</p>
+                </div>
+                
+                <form id="bookingForm" class="form-body">
+                    <!-- Step 1: Event Details -->
+                    <div class="form-step active" id="step1">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="required">First Name</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="required">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" class="required">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="required">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="eventType" class="required">Type of Event</label>
+                            <select id="eventType" class="form-control" required>
+                                <option value="">Select Event Type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="private">Private Celebration</option>
+                                <option value="conference">Conference</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="eventName">Event Name / Occasion</label>
+                            <input type="text" id="eventName" class="form-control" placeholder="e.g., Sarah & James Wedding, Company Annual Gala">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests" class="required">Estimated Number of Guests</label>
+                            <select id="guests" class="form-control" required>
+                                <option value="">Select Guest Count</option>
+                                <option value="1-50">1-50</option>
+                                <option value="51-100">51-100</option>
+                                <option value="101-200">101-200</option>
+                                <option value="201-500">201-500</option>
+                                <option value="500+">500+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget" class="required">Estimated Budget (USD)</label>
+                            <select id="budget" class="form-control" required>
+                                <option value="">Select Budget Range</option>
+                                <option value="5000">$5,000 - $10,000</option>
+                                <option value="15000">$10,000 - $20,000</option>
+                                <option value="30000">$20,000 - $40,000</option>
+                                <option value="50000">$40,000 - $60,000</option>
+                                <option value="75000">$60,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="description">Event Description / Vision</label>
+                            <textarea id="description" class="form-control" rows="4" placeholder="Tell us about your event vision, theme, special requirements, etc."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <div></div> <!-- Empty div for spacing -->
+                            <button type="button" class="btn btn-primary" onclick="nextStep()">Next: Date & Time</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Date & Time -->
+                    <div class="form-step" id="step2">
+                        <div class="form-group">
+                            <label class="required">Preferred Event Date</label>
+                            <div class="calendar-container">
+                                <div class="calendar-header">
+                                    <h3 id="currentMonth">December 2023</h3>
+                                    <div>
+                                        <button type="button" class="btn btn-secondary" onclick="changeMonth(-1)" style="padding: 5px 10px; margin-right: 5px;">&lt;</button>
+                                        <button type="button" class="btn btn-secondary" onclick="changeMonth(1)" style="padding: 5px 10px;">&gt;</button>
+                                    </div>
+                                </div>
+                                <div class="calendar-grid" id="calendarDays">
+                                    <!-- Calendar will be generated by JavaScript -->
+                                </div>
+                            </div>
+                            <input type="hidden" id="selectedDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">Preferred Time</label>
+                            <div class="time-slots">
+                                <div class="time-slot" data-time="08:00">Morning (8:00 AM)</div>
+                                <div class="time-slot" data-time="12:00">Afternoon (12:00 PM)</div>
+                                <div class="time-slot" data-time="16:00">Evening (4:00 PM)</div>
+                                <div class="time-slot" data-time="18:00">Night (6:00 PM)</div>
+                                <div class="time-slot" data-time="20:00">Late (8:00 PM)</div>
+                            </div>
+                            <input type="hidden" id="selectedTime" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="venue">Preferred Venue (if known)</label>
+                            <input type="text" id="venue" class="form-control" placeholder="Venue name or location">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="prevStep()">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep()">Next: Package Selection</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Package Selection -->
+                    <div class="form-step" id="step3">
+                        <div class="form-group">
+                            <label class="required">Select Service Package</label>
+                            <div class="package-options">
+                                <div class="package-option" onclick="selectPackage('essential')">
+                                    <h3>Essential Planning</h3>
+                                    <p>Perfect for smaller events with basic needs</p>
+                                    <div class="package-price">$2,500</div>
+                                </div>
+                                
+                                <div class="package-option featured" onclick="selectPackage('premium')">
+                                    <h3>Premium Planning</h3>
+                                    <p>Our most popular package for complete event management</p>
+                                    <div class="package-price">$5,500</div>
+                                </div>
+                                
+                                <div class="package-option" onclick="selectPackage('corporate')">
+                                    <h3>Corporate Excellence</h3>
+                                    <p>Comprehensive corporate event management</p>
+                                    <div class="package-price">$8,500</div>
+                                </div>
+                                
+                                <div class="package-option" onclick="selectPackage('custom')">
+                                    <h3>Custom Package</h3>
+                                    <p>Tailored services based on your specific requirements</p>
+                                    <div class="package-price">Custom Quote</div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="selectedPackage" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Additional Services (Optional)</label>
+                            <div class="additional-services">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="photography">
+                                    <span>Professional Photography & Videography (+$1,200)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="entertainment">
+                                    <span>Entertainment Coordination (+$800)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="catering">
+                                    <span>Premium Catering Management (+$1,500)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="decor">
+                                    <span>Full Event Design & Decor (+$2,000)</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="additionalServices" value="transportation">
+                                    <span>Guest Transportation (+$600)</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="package-summary">
+                            <h3>Booking Summary</h3>
+                            <div class="summary-item">
+                                <span>Service Package:</span>
+                                <span id="summaryPackage">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Additional Services:</span>
+                                <span id="summaryServices">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Estimated Guests:</span>
+                                <span id="summaryGuests">-</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Event Date:</span>
+                                <span id="summaryDate">-</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>Estimated Total:</span>
+                                <span id="summaryTotal">-</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="prevStep()">Previous</button>
+                            <button type="button" class="btn btn-primary" onclick="nextStep()">Next: Confirmation</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Confirmation -->
+                    <div class="form-step" id="step4">
+                        <div class="confirmation">
+                            <div class="confirmation-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h2>Booking Request Submitted!</h2>
+                            <p>Thank you for your booking request. We have received the following information:</p>
+                            
+                            <div class="booking-details">
+                                <div class="summary-item">
+                                    <span>Event:</span>
+                                    <span id="confirmEvent">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Date & Time:</span>
+                                    <span id="confirmDateTime">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Package:</span>
+                                    <span id="confirmPackage">-</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Contact:</span>
+                                    <span id="confirmContact">-</span>
+                                </div>
+                            </div>
+                            
+                            <p style="margin-top: 30px;">Our team will contact you within <strong>24 hours</strong> to confirm availability and discuss next steps.</p>
+                            <p>For immediate assistance, call us at <strong>+255 789 456 123</strong>.</p>
+                            
+                            <div style="margin-top: 40px;">
+                                <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+                                <a href="services.html" class="btn btn-secondary">View Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Event Planners Tanzania</div>
+                    <p>Creating unforgettable events across Tanzania since 2011.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact</h3>
+                    <p>Plot 123, Mlimani City<br>Dar es Salaam, Tanzania<br>+255 789 456 123<br>info@eventplannerstanzania.co.tz</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Event Planners Tanzania. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form steps management
+        let currentStep = 1;
+        const totalSteps = 4;
+        
+        function updateProcessSteps() {
+            document.querySelectorAll('.process-step').forEach(step => {
+                const stepNum = parseInt(step.getAttribute('data-step'));
+                if (stepNum === currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+        }
+        
+        function showStep(stepNum) {
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            
+            document.getElementById(`step${stepNum}`).classList.add('active');
+            currentStep = stepNum;
+            updateProcessSteps();
+        }
+        
+        function nextStep() {
+            // Validate current step
+            if (currentStep === 1 && !validateStep1()) return;
+            if (currentStep === 2 && !validateStep2()) return;
+            if (currentStep === 3 && !validateStep3()) return;
+            
+            if (currentStep < totalSteps) {
+                showStep(currentStep + 1);
+                
+                // Update summary in step 3
+                if (currentStep === 3) {
+                    updateSummary();
+                }
+                
+                // Show confirmation in step 4
+                if (currentStep === 4) {
+                    showConfirmation();
+                }
+            }
+        }
+        
+        function prevStep() {
+            if (currentStep > 1) {
+                showStep(currentStep - 1);
+            }
+        }
+        
+        // Validation functions
+        function validateStep1() {
+            const required = ['firstName', 'lastName', 'email', 'phone', 'eventType', 'guests', 'budget'];
+            let isValid = true;
+            
+            required.forEach(field => {
+                const element = document.getElementById(field);
+                if (!element.value.trim()) {
+                    element.style.borderColor = 'red';
+                    isValid = false;
+                } else {
+                    element.style.borderColor = '#ddd';
+                }
+            });
+            
+            if (!isValid) {
+                alert('Please fill in all required fields marked with *');
+            }
+            
+            return isValid;
+        }
+        
+        function validateStep2() {
+            const date = document.getElementById('selectedDate');
+            const time = document.getElementById('selectedTime');
+            
+            if (!date.value) {
+                alert('Please select an event date');
+                return false;
+            }
+            
+            if (!time.value) {
+                alert('Please select a preferred time');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        function validateStep3() {
+            const packageSelect = document.getElementById('selectedPackage');
+            
+            if (!packageSelect.value) {
+                alert('Please select a service package');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // Calendar functionality
+        let currentDate = new Date();
+        
+        function renderCalendar() {
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            
+            document.getElementById('currentMonth').textContent = 
+                `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+            
+            const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+            const startingDay = firstDay.getDay();
+            const monthLength = lastDay.getDate();
+            
+            const calendarGrid = document.getElementById('calendarDays');
+            calendarGrid.innerHTML = '';
+            
+            // Day headers
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            days.forEach(day => {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                dayElement.textContent = day;
+                calendarGrid.appendChild(dayElement);
+            });
+            
+            // Previous month days
+            const prevMonthLastDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+            for (let i = 0; i < startingDay; i++) {
+                const dateElement = document.createElement('div');
+                dateElement.className = 'calendar-date disabled';
+                dateElement.textContent = prevMonthLastDay - startingDay + i + 1;
+                calendarGrid.appendChild(dateElement);
+            }
+            
+            // Current month days
+            const today = new Date();
+            const selectedDate = document.getElementById('selectedDate').value;
+            
+            for (let i = 1; i <= monthLength; i++) {
+                const dateElement = document.createElement('div');
+                dateElement.className = 'calendar-date';
+                dateElement.textContent = i;
+                
+                const dateStr = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${i.toString().padStart(2, '0')}`;
+                dateElement.setAttribute('data-date', dateStr);
+                
+                // Disable past dates
+                const thisDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), i);
+                if (thisDate < today.setHours(0, 0, 0, 0)) {
+                    dateElement.classList.add('disabled');
+                }
+                
+                // Mark selected date
+                if (dateStr === selectedDate) {
+                    dateElement.classList.add('selected');
+                }
+                
+                dateElement.addEventListener('click', function() {
+                    if (!this.classList.contains('disabled')) {
+                        document.querySelectorAll('.calendar-date').forEach(d => d.classList.remove('selected'));
+                        this.classList.add('selected');
+                        document.getElementById('selectedDate').value = this.getAttribute('data-date');
+                    }
+                });
+                
+                calendarGrid.appendChild(dateElement);
+            }
+            
+            // Next month days
+            const totalCells = 42; // 6 weeks * 7 days
+            const cellsUsed = startingDay + monthLength;
+            for (let i = 1; i <= (totalCells - cellsUsed); i++) {
+                const dateElement = document.createElement('div');
+                dateElement.className = 'calendar-date disabled';
+                dateElement.textContent = i;
+                calendarGrid.appendChild(dateElement);
+            }
+        }
+        
+        function changeMonth(direction) {
+            currentDate.setMonth(currentDate.getMonth() + direction);
+            renderCalendar();
+        }
+        
+        // Time slot selection
+        document.querySelectorAll('.time-slot').forEach(slot => {
+            slot.addEventListener('click', function() {
+                document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+                this.classList.add('selected');
+                document.getElementById('selectedTime').value = this.getAttribute('data-time');
+            });
+        });
+        
+        // Package selection
+        function selectPackage(packageType) {
+            document.querySelectorAll('.package-option').forEach(p => p.classList.remove('selected'));
+            document.querySelector(`.package-option[onclick*="${packageType}"]`).classList.add('selected');
+            document.getElementById('selectedPackage').value = packageType;
+            updateSummary();
+        }
+        
+        // Update booking summary
+        function updateSummary() {
+            // Package
+            const packageMap = {
+                'essential': 'Essential Planning - $2,500',
+                'premium': 'Premium Planning - $5,500',
+                'corporate': 'Corporate Excellence - $8,500',
+                'custom': 'Custom Package - Quote Required'
+            };
+            
+            const selectedPackage = document.getElementById('selectedPackage').value;
+            document.getElementById('summaryPackage').textContent = packageMap[selectedPackage] || '-';
+            
+            // Additional services
+            const additionalServices = Array.from(document.querySelectorAll('input[name="additionalServices"]:checked'))
+                .map(cb => {
+                    const text = cb.parentElement.querySelector('span').textContent;
+                    return text.split('(+')[0].trim();
+                });
+            
+            document.getElementById('summaryServices').textContent = additionalServices.length > 0 
+                ? additionalServices.join(', ') 
+                : 'None';
+            
+            // Guests
+            document.getElementById('summaryGuests').textContent = document.getElementById('guests').value || '-';
+            
+            // Date
+            const selectedDate = document.getElementById('selectedDate').value;
+            if (selectedDate) {
+                const dateObj = new Date(selectedDate);
+                document.getElementById('summaryDate').textContent = dateObj.toLocaleDateString('en-US', {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                });
+            } else {
+                document.getElementById('summaryDate').textContent = '-';
+            }
+            
+            // Calculate total
+            let total = 0;
+            
+            // Package price
+            const packagePrices = {
+                'essential': 2500,
+                'premium': 5500,
+                'corporate': 8500,
+                'custom': 0
+            };
+            
+            total += packagePrices[selectedPackage] || 0;
+            
+            // Additional services
+            const servicePrices = {
+                'photography': 1200,
+                'entertainment': 800,
+                'catering': 1500,
+                'decor': 2000,
+                'transportation': 600
+            };
+            
+            document.querySelectorAll('input[name="additionalServices"]:checked').forEach(cb => {
+                total += servicePrices[cb.value] || 0;
+            });
+            
+            // Display total
+            document.getElementById('summaryTotal').textContent = total > 0 
+                ? `$${total.toLocaleString()}` 
+                : 'Custom Quote Required';
+        }
+        
+        // Show confirmation details
+        function showConfirmation() {
+            // Event name
+            const eventType = document.getElementById('eventType').value;
+            const eventName = document.getElementById('eventName').value || 'Event';
+            document.getElementById('confirmEvent').textContent = `${eventName} (${eventType})`;
+            
+            // Date & time
+            const selectedDate = document.getElementById('selectedDate').value;
+            const selectedTime = document.getElementById('selectedTime').value;
+            
+            if (selectedDate && selectedTime) {
+                const dateObj = new Date(selectedDate);
+                const timeText = {
+                    '08:00': '8:00 AM',
+                    '12:00': '12:00 PM',
+                    '16:00': '4:00 PM',
+                    '18:00': '6:00 PM',
+                    '20:00': '8:00 PM'
+                }[selectedTime] || selectedTime;
+                
+                document.getElementById('confirmDateTime').textContent = 
+                    `${dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} at ${timeText}`;
+            }
+            
+            // Package
+            const packageMap = {
+                'essential': 'Essential Planning',
+                'premium': 'Premium Planning',
+                'corporate': 'Corporate Excellence',
+                'custom': 'Custom Package'
+            };
+            
+            const selectedPackage = document.getElementById('selectedPackage').value;
+            document.getElementById('confirmPackage').textContent = packageMap[selectedPackage] || '-';
+            
+            // Contact
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            document.getElementById('confirmContact').textContent = `${firstName} ${lastName} (${email})`;
+            
+            // Submit form data (in a real application, this would send to a server)
+            setTimeout(() => {
+                console.log('Booking submitted:', {
+                    name: `${firstName} ${lastName}`,
+                    email: email,
+                    phone: document.getElementById('phone').value,
+                    eventType: eventType,
+                    eventName: eventName,
+                    guests: document.getElementById('guests').value,
+                    date: selectedDate,
+                    time: selectedTime,
+                    package: selectedPackage,
+                    additionalServices: Array.from(document.querySelectorAll('input[name="additionalServices"]:checked')).map(cb => cb.value)
+                });
+                
+                // Show success message
+                alert('Booking request submitted successfully! Our team will contact you within 24 hours.');
+            }, 500);
+        }
+        
+        // Initialize calendar
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCalendar();
+            
+            // Set current year in copyright
+            const year = new Date().getFullYear();
+            const copyrightElement = document.querySelector('.copyright p');
+            if(copyrightElement) {
+                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2023', year);
+            }
+            
+            // Check for package in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const packageParam = urlParams.get('package');
+            if (packageParam && ['essential', 'premium', 'corporate', 'custom'].includes(packageParam)) {
+                selectPackage(packageParam);
+            }
+            
+            // Update summary when additional services change
+            document.querySelectorAll('input[name="additionalServices"]').forEach(cb => {
+                cb.addEventListener('change', updateSummary);
+            });
+            
+            // Update summary when form fields change
+            ['guests', 'budget', 'selectedDate', 'selectedPackage'].forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.addEventListener('change', updateSummary);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
