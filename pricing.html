@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing & Packages - Event Planners Tanzania</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Pricing & Packages | Event Planners Tanzania - Transparent Pricing</title>
     <style>
+        /* === GOOSEBUMPS STYLES FOR PRICING PAGE === */
         :root {
-            --primary: #C41E3A;
-            --primary-dark: #9a162d;
-            --secondary: #FFD166;
-            --dark: #222222;
-            --light: #f8f8f8;
-            --gray: #666666;
-            --light-gray: #eeeeee;
-            --transition: all 0.3s ease;
+            --gold: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --deep-red: #C41E3A;
+            --midnight: #0A0A0F;
+            --charcoal: #1A1A1F;
+            --ivory: #FFFDF5;
+            --light-gold: #F5E8C8;
+            --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-gold: 0 0 40px var(--gold-glow);
         }
         
         * {
@@ -25,777 +25,746 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--midnight);
+            color: var(--ivory);
+            line-height: 1.7;
         }
         
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+        /* === HEADER === */
+        .magical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+        
+        .logo-magic {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-orb {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, var(--gold), var(--deep-red));
+            border-radius: 50%;
+        }
+        
+        .logo-text {
+            font-family: 'Georgia', serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gold), var(--ivory));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .magic-nav {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .magic-nav a {
+            color: var(--light-gold);
+            text-decoration: none;
             font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        h2 {
-            font-size: 2.2rem;
+            font-size: 15px;
+            padding: 10px 0;
             position: relative;
-            margin-bottom: 2rem;
-            padding-bottom: 10px;
         }
         
-        h2:after {
+        .magic-nav a.active {
+            color: var(--gold);
+        }
+        
+        .magic-nav a.active::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 70px;
-            height: 4px;
-            background-color: var(--primary);
-        }
-        
-        h2.text-center:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .container {
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            height: 2px;
+            background: var(--gold);
         }
         
-        section {
-            padding: 80px 0;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            text-decoration: none;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(196, 30, 58, 0.2);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--dark);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        /* Hero */
+        /* === PAGE HERO === */
         .page-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            min-height: 50vh;
+            background: linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.7)),
+                        url('https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 120px 0 80px;
+            display: flex;
+            align-items: center;
+            padding: 150px 40px 100px;
+        }
+        
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
         
-        .page-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        .page-hero-content h1 {
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--ivory), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
         }
         
-        /* Pricing Toggle */
+        /* === PRICING TOGGLE === */
         .pricing-toggle {
             text-align: center;
-            margin-bottom: 40px;
+            padding: 60px 40px 40px;
         }
         
         .toggle-container {
             display: inline-flex;
-            background-color: white;
+            background: rgba(26, 26, 31, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
             border-radius: 50px;
             padding: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .toggle-btn {
             padding: 12px 30px;
-            border: none;
             background: transparent;
+            border: none;
+            color: var(--light-gold);
             font-weight: 600;
             cursor: pointer;
             border-radius: 50px;
-            transition: var(--transition);
+            transition: var(--transition-slow);
         }
         
         .toggle-btn.active {
-            background-color: var(--primary);
-            color: white;
+            background: var(--gold);
+            color: var(--midnight);
         }
         
-        /* Pricing Cards */
+        /* === PRICING CARDS === */
         .pricing-cards {
+            padding: 40px 40px 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
         }
         
         .pricing-card {
-            background-color: white;
-            border-radius: 8px;
+            background: rgba(26, 26, 31, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
+            transition: var(--transition-slow);
             position: relative;
         }
         
         .pricing-card.featured {
+            border: 2px solid var(--gold);
             transform: scale(1.05);
-            border: 2px solid var(--primary);
+            box-shadow: var(--shadow-gold);
         }
         
-        .pricing-card.featured:before {
+        .pricing-card.featured::before {
             content: 'MOST POPULAR';
             position: absolute;
             top: 20px;
-            right: -30px;
-            background: var(--primary);
-            color: white;
-            padding: 5px 30px;
+            right: -35px;
+            background: var(--gold);
+            color: var(--midnight);
+            padding: 5px 40px;
             transform: rotate(45deg);
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
         }
         
         .pricing-header {
-            padding: 40px 30px 30px;
+            background: linear-gradient(135deg, var(--gold), var(--deep-red));
+            padding: 40px 30px;
             text-align: center;
-        }
-        
-        .pricing-category {
-            display: inline-block;
-            background-color: rgba(196, 30, 58, 0.1);
-            color: var(--primary);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
+            color: var(--ivory);
         }
         
         .pricing-price {
             font-size: 3.5rem;
             font-weight: 700;
-            color: var(--primary);
-            margin: 10px 0;
+            margin: 20px 0;
         }
         
         .pricing-price span {
             font-size: 1rem;
-            color: var(--gray);
+            opacity: 0.9;
         }
         
         .pricing-body {
-            padding: 0 30px 30px;
+            padding: 40px 30px;
         }
         
         .pricing-features {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         
         .pricing-features li {
             padding: 12px 0;
-            border-bottom: 1px solid var(--light-gray);
+            border-bottom: 1px solid rgba(255, 253, 245, 0.1);
             display: flex;
             align-items: center;
+            gap: 10px;
         }
         
         .pricing-features li i {
-            color: var(--primary);
-            margin-right: 10px;
-            font-size: 0.9rem;
+            color: var(--gold);
         }
         
         .pricing-features li.disabled {
-            color: #ccc;
+            color: rgba(255, 253, 245, 0.3);
         }
         
         .pricing-features li.disabled i {
-            color: #ccc;
+            color: rgba(255, 253, 245, 0.3);
         }
         
-        /* Add-on Services */
+        .btn-magic {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-slow);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--deep-red));
+            color: var(--ivory);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* === ADD-ON SERVICES === */
         .addon-services {
-            background-color: var(--light-gray);
+            padding: 100px 40px;
+            background: rgba(26, 26, 31, 0.5);
         }
         
         .addon-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 40px auto 0;
         }
         
         .addon-card {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
+            background: rgba(26, 26, 31, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition-slow);
         }
         
         .addon-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-gold);
         }
         
         .addon-icon {
             font-size: 2.5rem;
-            color: var(--primary);
+            color: var(--gold);
             margin-bottom: 20px;
         }
         
         .addon-price {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--primary);
-            margin: 15px 0;
+            color: var(--gold);
+            margin: 20px 0;
         }
         
-        /* FAQ Section */
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--gold);
+            color: var(--midnight);
+        }
+        
+        /* === FAQ === */
         .faq-section {
-            background-color: white;
+            padding: 100px 40px;
         }
         
         .faq-container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
         .faq-item {
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
             margin-bottom: 20px;
-            border: 1px solid var(--light-gray);
-            border-radius: 8px;
             overflow: hidden;
+            background: rgba(26, 26, 31, 0.7);
         }
         
         .faq-question {
-            padding: 20px 25px;
-            background-color: var(--light-gray);
+            padding: 25px 30px;
+            font-weight: 600;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
+            color: var(--light-gold);
         }
         
         .faq-answer {
-            padding: 0 25px;
+            padding: 0 30px;
             max-height: 0;
             overflow: hidden;
-            transition: var(--transition);
+            transition: var(--transition-slow);
+            color: rgba(255, 253, 245, 0.8);
         }
         
         .faq-item.active .faq-answer {
-            padding: 20px 25px;
+            padding: 0 30px 25px;
             max-height: 500px;
         }
         
         .faq-toggle {
-            transition: var(--transition);
+            transition: var(--transition-slow);
         }
         
         .faq-item.active .faq-toggle {
             transform: rotate(45deg);
         }
         
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            text-align: center;
-            padding: 80px 0;
-        }
-        
-        .cta-section h2 {
-            color: white;
-        }
-        
-        .cta-section h2:after {
-            background-color: var(--secondary);
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 20px;
+        /* === FOOTER === */
+        .footer-magic {
+            background: rgba(10, 10, 15, 0.95);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 80px 40px 30px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
         }
         
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
+        .footer-logo-section .logo-text {
+            font-size: 24px;
             margin-bottom: 20px;
         }
         
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+        .footer-description {
+            color: rgba(255, 253, 245, 0.7);
         }
         
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .page-hero h1 {
-                font-size: 2.5rem;
+        .footer-links h3 {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 253, 245, 0.7);
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: rgba(255, 253, 245, 0.5);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 1200px) {
+            .pricing-grid,
+            .addon-grid,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .pricing-card.featured {
                 transform: none;
             }
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid,
+            .addon-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
             
-            .nav-links {
+            .header-container {
+                padding: 0 20px;
+                height: 80px;
+            }
+            
+            .magic-nav {
                 display: none;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 3rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">Event<span>Planners</span></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="pricing.html" class="active">Pricing</a></li>
-                    <li><a href="booking.html">Book Now</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
+    <header class="magical-header">
+        <div class="header-container">
+            <div class="logo-magic">
+                <div class="logo-orb"></div>
+                <div class="logo-text">Event Planners Tanzania</div>
+            </div>
+            
+            <nav class="magic-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="pricing.html" class="active">Pricing</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Page Hero -->
     <section class="page-hero">
-        <div class="container">
-            <h1>Pricing & Packages</h1>
-            <p>Transparent pricing for exceptional event planning services</p>
+        <div class="page-hero-content">
+            <h1>Transparent Pricing</h1>
+            <p style="font-size: 1.2rem; color: rgba(255, 253, 245, 0.9);">
+                Clear pricing for extraordinary event planning services
+            </p>
         </div>
     </section>
 
-    <!-- Main Pricing -->
-    <section class="pricing">
-        <div class="container">
-            <h2 class="text-center">Our Service Packages</h2>
-            <p class="text-center">Choose the package that best fits your event needs and budget</p>
-            
-            <div class="pricing-toggle">
-                <div class="toggle-container">
-                    <button class="toggle-btn active" data-plan="full">Full Event Planning</button>
-                    <button class="toggle-btn" data-plan="partial">Partial Planning</button>
-                    <button class="toggle-btn" data-plan="day">Day-of Coordination</button>
+    <!-- Pricing Toggle -->
+    <div class="pricing-toggle">
+        <div class="toggle-container">
+            <button class="toggle-btn active" data-plan="full">Full Planning</button>
+            <button class="toggle-btn" data-plan="partial">Partial Planning</button>
+            <button class="toggle-btn" data-plan="day">Day Coordination</button>
+        </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <section class="pricing-cards">
+        <div class="pricing-grid">
+            <!-- Package 1 -->
+            <div class="pricing-card" data-plan="full partial">
+                <div class="pricing-header">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Essential Planning</h3>
+                    <div class="pricing-price">$2,500<span>/event</span></div>
+                    <p>Perfect for smaller, simpler events</p>
+                </div>
+                <div class="pricing-body">
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Initial consultation</li>
+                        <li><i class="fas fa-check"></i> Vendor recommendations</li>
+                        <li><i class="fas fa-check"></i> Budget management</li>
+                        <li><i class="fas fa-check"></i> Timeline development</li>
+                        <li><i class="fas fa-check"></i> Two planning meetings</li>
+                        <li><i class="fas fa-check"></i> Day-of coordination</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Full design concept</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Unlimited vendor meetings</li>
+                    </ul>
+                    <a href="booking.html?package=essential" class="btn-magic btn-primary">Select Package</a>
                 </div>
             </div>
             
-            <div class="pricing-cards">
-                <!-- Package 1 -->
-                <div class="pricing-card" data-plan="full partial">
-                    <div class="pricing-header">
-                        <div class="pricing-category">Essential</div>
-                        <h3>Essential Planning</h3>
-                        <div class="pricing-price">$2,500<span>/event</span></div>
-                        <p>Perfect for smaller, simpler events</p>
-                    </div>
-                    <div class="pricing-body">
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> Initial consultation & concept development</li>
-                            <li><i class="fas fa-check"></i> Vendor recommendations (3 per category)</li>
-                            <li><i class="fas fa-check"></i> Budget creation & management</li>
-                            <li><i class="fas fa-check"></i> Timeline development</li>
-                            <li><i class="fas fa-check"></i> Two planning meetings</li>
-                            <li><i class="fas fa-check"></i> Day-of coordination (8 hours)</li>
-                            <li class="disabled"><i class="fas fa-times"></i> Full design concept</li>
-                            <li class="disabled"><i class="fas fa-times"></i> Unlimited vendor meetings</li>
-                        </ul>
-                        <a href="booking.html?package=essential" class="btn btn-primary" style="width: 100%;">Select Package</a>
-                    </div>
+            <!-- Package 2 -->
+            <div class="pricing-card featured" data-plan="full">
+                <div class="pricing-header">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Premium Planning</h3>
+                    <div class="pricing-price">$5,500<span>/event</span></div>
+                    <p>Complete event management package</p>
                 </div>
-                
-                <!-- Package 2 (Featured) -->
-                <div class="pricing-card featured" data-plan="full">
-                    <div class="pricing-header">
-                        <div class="pricing-category">Premium</div>
-                        <h3>Premium Planning</h3>
-                        <div class="pricing-price">$5,500<span>/event</span></div>
-                        <p>Our most popular complete package</p>
-                    </div>
-                    <div class="pricing-body">
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> Everything in Essential Planning</li>
-                            <li><i class="fas fa-check"></i> Full design concept with mood boards</li>
-                            <li><i class="fas fa-check"></i> Unlimited vendor meetings & negotiations</li>
-                            <li><i class="fas fa-check"></i> Venue selection & site visits</li>
-                            <li><i class="fas fa-check"></i> Monthly planning meetings</li>
-                            <li><i class="fas fa-check"></i> Full event design & styling</li>
-                            <li><i class="fas fa-check"></i> Full-day coordination (12 hours)</li>
-                            <li><i class="fas fa-check"></i> Post-event breakdown</li>
-                        </ul>
-                        <a href="booking.html?package=premium" class="btn btn-primary" style="width: 100%;">Select Package</a>
-                    </div>
-                </div>
-                
-                <!-- Package 3 -->
-                <div class="pricing-card" data-plan="full">
-                    <div class="pricing-header">
-                        <div class="pricing-category">Corporate</div>
-                        <h3>Corporate Excellence</h3>
-                        <div class="pricing-price">$8,500<span>/event</span></div>
-                        <p>Complete corporate event management</p>
-                    </div>
-                    <div class="pricing-body">
-                        <ul class="pricing-features">
-                            <li><i class="fas fa-check"></i> Everything in Premium Planning</li>
-                            <li><i class="fas fa-check"></i> Brand integration & messaging</li>
-                            <li><i class="fas fa-check"></i> Speaker & talent management</li>
-                            <li><i class="fas fa-check"></i> Registration system setup</li>
-                            <li><i class="fas fa-check"></i> AV & technical production</li>
-                            <li><i class="fas fa-check"></i> Post-event analytics & reporting</li>
-                            <li><i class="fas fa-check"></i> Dedicated project manager</li>
-                            <li><i class="fas fa-check"></i> 24/7 support during event</li>
-                        </ul>
-                        <a href="booking.html?package=corporate" class="btn btn-primary" style="width: 100%;">Select Package</a>
-                    </div>
+                <div class="pricing-body">
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Essential</li>
+                        <li><i class="fas fa-check"></i> Full design concept</li>
+                        <li><i class="fas fa-check"></i> Unlimited vendor meetings</li>
+                        <li><i class="fas fa-check"></i> Venue selection</li>
+                        <li><i class="fas fa-check"></i> Monthly planning meetings</li>
+                        <li><i class="fas fa-check"></i> Full event design</li>
+                        <li><i class="fas fa-check"></i> Full-day coordination</li>
+                        <li><i class="fas fa-check"></i> Post-event breakdown</li>
+                    </ul>
+                    <a href="booking.html?package=premium" class="btn-magic btn-primary">Select Package</a>
                 </div>
             </div>
             
-            <div class="text-center">
-                <p>All packages require a 30% deposit to secure your date. Final payment is due 14 days before the event.</p>
+            <!-- Package 3 -->
+            <div class="pricing-card" data-plan="full">
+                <div class="pricing-header">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Corporate Excellence</h3>
+                    <div class="pricing-price">$8,500<span>/event</span></div>
+                    <p>Comprehensive corporate management</p>
+                </div>
+                <div class="pricing-body">
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Everything in Premium</li>
+                        <li><i class="fas fa-check"></i> Brand integration</li>
+                        <li><i class="fas fa-check"></i> Speaker management</li>
+                        <li><i class="fas fa-check"></i> Registration system</li>
+                        <li><i class="fas fa-check"></i> AV & technical production</li>
+                        <li><i class="fas fa-check"></i> Post-event analytics</li>
+                        <li><i class="fas fa-check"></i> Dedicated project manager</li>
+                        <li><i class="fas fa-check"></i> 24/7 event support</li>
+                    </ul>
+                    <a href="booking.html?package=corporate" class="btn-magic btn-primary">Select Package</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Add-on Services -->
     <section class="addon-services">
-        <div class="container">
-            <h2 class="text-center">Add-on Services</h2>
-            <p class="text-center">Enhance your event with these additional services</p>
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 3rem; color: var(--ivory); margin-bottom: 20px;">Add-on Services</h2>
+            <p style="color: rgba(255, 253, 245, 0.7); font-size: 1.1rem;">
+                Enhance your event with these additional premium services
+            </p>
+        </div>
+        
+        <div class="addon-grid">
+            <div class="addon-card">
+                <div class="addon-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3 style="color: var(--ivory); margin-bottom: 15px;">Photography & Videography</h3>
+                <p style="color: rgba(255, 253, 245, 0.8); margin-bottom: 20px;">
+                    Professional documentation with high-quality photos and cinematic videos
+                </p>
+                <div class="addon-price">From $1,200</div>
+                <a href="booking.html" class="btn-magic btn-secondary">Add to Package</a>
+            </div>
             
-            <div class="addon-grid">
-                <div class="addon-card">
-                    <div class="addon-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <h3>Photography & Videography</h3>
-                    <p>Professional documentation of your event with high-quality photos and cinematic video highlights.</p>
-                    <div class="addon-price">Starting at $1,200</div>
-                    <a href="booking.html" class="btn btn-secondary">Add to Package</a>
+            <div class="addon-card">
+                <div class="addon-icon">
+                    <i class="fas fa-music"></i>
                 </div>
-                
-                <div class="addon-card">
-                    <div class="addon-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <h3>Entertainment Coordination</h3>
-                    <p>Source and manage DJs, live bands, performers, and other entertainment for your event.</p>
-                    <div class="addon-price">Starting at $800</div>
-                    <a href="booking.html" class="btn btn-secondary">Add to Package</a>
+                <h3 style="color: var(--ivory); margin-bottom: 15px;">Entertainment Coordination</h3>
+                <p style="color: rgba(255, 253, 245, 0.8); margin-bottom: 20px;">
+                    Source and manage DJs, live bands, performers, and entertainment
+                </p>
+                <div class="addon-price">From $800</div>
+                <a href="booking.html" class="btn-magic btn-secondary">Add to Package</a>
+            </div>
+            
+            <div class="addon-card">
+                <div class="addon-icon">
+                    <i class="fas fa-utensils"></i>
                 </div>
-                
-                <div class="addon-card">
-                    <div class="addon-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>Premium Catering Management</h3>
-                    <p>Full catering coordination including menu planning, tastings, and day-of supervision.</p>
-                    <div class="addon-price">Starting at $1,500</div>
-                    <a href="booking.html" class="btn btn-secondary">Add to Package</a>
-                </div>
-                
-                <div class="addon-card">
-                    <div class="addon-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Event Design & Decor</h3>
-                    <p>Complete design service including theme development, floral arrangements, and custom decor.</p>
-                    <div class="addon-price">Starting at $2,000</div>
-                    <a href="booking.html" class="btn btn-secondary">Add to Package</a>
-                </div>
+                <h3 style="color: var(--ivory); margin-bottom: 15px;">Premium Catering</h3>
+                <p style="color: rgba(255, 253, 245, 0.8); margin-bottom: 20px;">
+                    Full catering coordination including menu planning and tastings
+                </p>
+                <div class="addon-price">From $1,500</div>
+                <a href="booking.html" class="btn-magic btn-secondary">Add to Package</a>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
     <section class="faq-section">
-        <div class="container">
-            <h2 class="text-center">Frequently Asked Questions</h2>
-            <p class="text-center">Find answers to common questions about our pricing and services</p>
-            
-            <div class="faq-container">
-                <!-- FAQ 1 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What's included in your event planning packages?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Our packages include professional event planning services tailored to your needs. This typically includes initial consultation, vendor recommendations and management, budget planning, timeline creation, and day-of coordination. Higher-tier packages include additional services like full design concepts, unlimited vendor meetings, and post-event services.</p>
-                    </div>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 3rem; color: var(--ivory); margin-bottom: 20px;">Frequently Asked Questions</h2>
+            <p style="color: rgba(255, 253, 245, 0.7); font-size: 1.1rem;">
+                Find answers to common questions about our pricing and services
+            </p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's included in your event planning packages?</span>
+                    <span class="faq-toggle">+</span>
                 </div>
-                
-                <!-- FAQ 2 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you offer custom packages?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we understand that every event is unique. We offer custom packages tailored to your specific requirements and budget. Contact us for a personalized quote based on your event details, guest count, and desired services.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 3 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is your payment structure?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>We require a 30% deposit to secure your event date. The remaining balance is divided into two payments: 50% due 60 days before the event, and the final 20% due 14 days before the event. For events booked with less than 60 days' notice, a modified payment schedule will be arranged.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 4 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can we make changes to our package after booking?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, you can upgrade or add services to your package up to 30 days before your event. Downgrades or removals of services may be subject to fees depending on the timing and vendor commitments already made. All changes must be requested in writing.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 5 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you offer discounts for non-profit organizations?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer special rates for registered non-profit organizations. Please contact us with your organization details and event requirements for a customized quote. We also offer reduced rates for charity events and fundraisers.</p>
-                    </div>
-                </div>
-                
-                <!-- FAQ 6 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What is your cancellation policy?</span>
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Cancellations made more than 90 days before the event receive a full refund of the deposit. Cancellations between 90-60 days before the event receive a 50% refund. Cancellations within 60 days of the event are non-refundable, though we will work with you to apply paid services to a future event if possible.</p>
-                    </div>
+                <div class="faq-answer">
+                    Our packages include professional event planning services tailored to your needs. This typically includes initial consultation, vendor recommendations and management, budget planning, timeline creation, and day-of coordination. Higher-tier packages include additional services like full design concepts, unlimited vendor meetings, and post-event services.
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Plan Your Event?</h2>
-            <p>Contact us today for a complimentary consultation and personalized quote</p>
-            <a href="booking.html" class="btn btn-secondary">Book a Consultation</a>
-            <a href="index.html#contact" class="btn btn-secondary" style="margin-left: 15px;">Contact Us</a>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer custom packages?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we understand that every event is unique. We offer custom packages tailored to your specific requirements and budget. Contact us for a personalized quote based on your event details, guest count, and desired services.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What is your payment structure?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    We require a 30% deposit to secure your event date. The remaining balance is divided into two payments: 50% due 60 days before the event, and the final 20% due 14 days before the event. For events booked with less than 60 days' notice, a modified payment schedule will be arranged.
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <div class="footer-logo">Event Planners Tanzania</div>
-                    <p>Creating unforgettable events across Tanzania since 2011.</p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <p>Plot 123, Mlimani City<br>Dar es Salaam, Tanzania<br>+255 789 456 123<br>info@eventplannerstanzania.co.tz</p>
-                </div>
+    <footer class="footer-magic">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <div class="logo-text">Event Planners Tanzania</div>
+                <p class="footer-description">
+                    Creating unforgettable events across Tanzania since 2011.
+                </p>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Event Planners Tanzania. All Rights Reserved.</p>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-links">
+                <h3>Packages</h3>
+                <ul>
+                    <li><a href="pricing.html">Essential Planning</a></li>
+                    <li><a href="pricing.html">Premium Planning</a></li>
+                    <li><a href="pricing.html">Corporate Excellence</a></li>
+                    <li><a href="pricing.html">Custom Packages</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+255789456123">+255 789 456 123</a></li>
+                    <li><a href="mailto:info@eventplannerstanzania.co.tz">Email Us</a></li>
+                    <li><a href="booking.html">Book Consultation</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Event Planners Tanzania. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         // Pricing toggle
-        const toggleBtns = document.querySelectorAll('.toggle-btn');
-        const pricingCards = document.querySelectorAll('.pricing-card');
-        
-        toggleBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                toggleBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const planType = btn.getAttribute('data-plan');
-                
-                pricingCards.forEach(card => {
-                    const cardPlans = card.getAttribute('data-plan').split(' ');
-                    
-                    if (cardPlans.includes(planType)) {
-                        card.style.display = 'block';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-        
-        // FAQ functionality
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            
-            question.addEventListener('click', () => {
-                // Close all other items
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item && otherItem.classList.contains('active')) {
-                        otherItem.classList.remove('active');
-                    }
-                });
-                
-                // Toggle current item
-                item.classList.toggle('active');
-            });
-        });
-        
-        // Set current year in copyright
         document.addEventListener('DOMContentLoaded', () => {
-            const year = new Date().getFullYear();
-            const copyrightElement = document.querySelector('.copyright p');
-            if(copyrightElement) {
-                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2023', year);
-            }
+            // Set current year
+            document.querySelector('.footer-bottom p').innerHTML = 
+                document.querySelector('.footer-bottom p').innerHTML.replace('2023', new Date().getFullYear());
+            
+            // Toggle functionality
+            const toggleButtons = document.querySelectorAll('.toggle-btn');
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    toggleButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    const planType = button.getAttribute('data-plan');
+                    
+                    pricingCards.forEach(card => {
+                        const cardPlans = card.getAttribute('data-plan').split(' ');
+                        
+                        if (cardPlans.includes(planType)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // FAQ functionality
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
         });
     </script>
 </body>
