@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Event Planners Tanzania - Get In Touch</title>
+    <style>
+        /* === GOOSEBUMPS STYLES FOR CONTACT PAGE === */
+        :root {
+            --gold: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --deep-red: #C41E3A;
+            --midnight: #0A0A0F;
+            --charcoal: #1A1A1F;
+            --ivory: #FFFDF5;
+            --light-gold: #F5E8C8;
+            --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-gold: 0 0 40px var(--gold-glow);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--midnight);
+            color: var(--ivory);
+            line-height: 1.7;
+        }
+        
+        /* === HEADER === */
+        .magical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+        
+        .logo-magic {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-orb {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, var(--gold), var(--deep-red));
+            border-radius: 50%;
+        }
+        
+        .logo-text {
+            font-family: 'Georgia', serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gold), var(--ivory));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .magic-nav {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .magic-nav a {
+            color: var(--light-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .magic-nav a.active {
+            color: var(--gold);
+        }
+        
+        .magic-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gold);
+        }
+        
+        /* === PAGE HERO === */
+        .page-hero {
+            min-height: 50vh;
+            background: linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.7)),
+                        url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 150px 40px 100px;
+        }
+        
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .page-hero-content h1 {
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--ivory), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* === CONTACT GRID === */
+        .contact-grid {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+        
+        .contact-info h2 {
+            font-size: 2.5rem;
+            color: var(--ivory);
+            margin-bottom: 30px;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-method {
+            background: rgba(26, 26, 31, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition-slow);
+        }
+        
+        .contact-method:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .contact-form-container {
+            background: rgba(26, 26, 31, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            padding: 50px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--light-gold);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 253, 245, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            color: var(--ivory);
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition-slow);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 20px var(--gold-glow);
+            background: rgba(255, 253, 245, 0.08);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-magic {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition-slow);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--deep-red));
+            color: var(--ivory);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* === MAP SECTION === */
+        .map-section {
+            padding: 0 40px 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .map-container {
+            background: rgba(26, 26, 31, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            position: relative;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.95), transparent);
+            padding: 40px;
+            color: var(--ivory);
+        }
+        
+        /* === FOOTER === */
+        .footer-magic {
+            background: rgba(10, 10, 15, 0.95);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 80px 40px 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
+        }
+        
+        .footer-logo-section .logo-text {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-description {
+            color: rgba(255, 253, 245, 0.7);
+        }
+        
+        .footer-links h3 {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 253, 245, 0.7);
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: rgba(255, 253, 245, 0.5);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+            
+            .contact-methods,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-methods,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-container {
+                padding: 0 20px;
+                height: 80px;
+            }
+            
+            .magic-nav {
+                display: none;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="magical-header">
+        <div class="header-container">
+            <div class="logo-magic">
+                <div class="logo-orb"></div>
+                <div class="logo-text">Event Planners Tanzania</div>
+            </div>
+            
+            <nav class="magic-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Get In Touch</h1>
+            <p style="font-size: 1.2rem; color: rgba(255, 253, 245, 0.9);">
+                Ready to plan your extraordinary event? Contact us to start your journey
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Grid -->
+    <section class="contact-grid">
+        <div class="grid-container">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p style="color: rgba(255, 253, 245, 0.8); margin-bottom: 30px;">
+                    Our team is available to discuss your event vision and answer any questions you may have. 
+                    Reach out through any of the channels below.
+                </p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 style="color: var(--ivory); margin-bottom: 10px;">Our Office</h3>
+                        <p style="color: rgba(255, 253, 245, 0.8);">
+                            Plot 123, Mlimani City<br>
+                            Dar es Salaam, Tanzania
+                        </p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 style="color: var(--ivory); margin-bottom: 10px;">Phone Numbers</h3>
+                        <p style="color: rgba(255, 253, 245, 0.8);">
+                            +255 789 456 123<br>
+                            +255 654 321 987
+                        </p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 style="color: var(--ivory); margin-bottom: 10px;">Email Addresses</h3>
+                        <p style="color: rgba(255, 253, 245, 0.8);">
+                            info@eventplannerstanzania.co.tz<br>
+                            bookings@eventplannerstanzania.co.tz
+                        </p>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 style="color: var(--ivory); margin-bottom: 10px;">Working Hours</h3>
+                        <p style="color: rgba(255, 253, 245, 0.8);">
+                            Monday - Friday: 8AM - 6PM<br>
+                            Saturday: 9AM - 4PM
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <h2 style="color: var(--ivory); margin-bottom: 30px;">Send Us a Message</h2>
+                
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number</label>
+                        <input type="tel" id="contactPhone" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEvent">Event Type</label>
+                        <select id="contactEvent" class="form-control">
+                            <option value="">Select Event Type</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="private">Private Celebration</option>
+                            <option value="inquiry">General Inquiry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message *</label>
+                        <textarea id="contactMessage" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-magic btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <!-- Map placeholder with background image -->
+            <div style="
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.7)),
+                            url('https://maps.googleapis.com/maps/api/staticmap?center=Dar+es+Salaam,Tanzania&zoom=13&size=1200x400&scale=2&key=AIzaSyD8k_4Z');
+                background-size: cover;
+                background-position: center;
+            "></div>
+            
+            <div class="map-overlay">
+                <h3 style="color: var(--gold); margin-bottom: 10px;">Visit Our Office</h3>
+                <p style="color: rgba(255, 253, 245, 0.9);">
+                    Plot 123, Mlimani City, Dar es Salaam, Tanzania<br>
+                    Parking available | Wheelchair accessible
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-magic">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <div class="logo-text">Event Planners Tanzania</div>
+                <p class="footer-description">
+                    Creating unforgettable events across Tanzania since 2011.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+255789456123">+255 789 456 123</a></li>
+                    <li><a href="mailto:info@eventplannerstanzania.co.tz">Email Us</a></li>
+                    <li><a href="contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Event Planners Tanzania. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year
+            document.querySelector('.footer-bottom p').innerHTML = 
+                document.querySelector('.footer-bottom p').innerHTML.replace('2023', new Date().getFullYear());
+            
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('contactName').value,
+                    email: document.getElementById('contactEmail').value,
+                    message: document.getElementById('contactMessage').value
+                };
+                
+                // Show success message
+                alert(`Thank you ${formData.name}! Your message has been sent successfully. We will contact you at ${formData.email} within 24 hours.`);
+                
+                // Reset form
+                this.reset();
+                
+                // In a real application, you would send the data to a server here
+                console.log('Contact form submitted:', formData);
+            });
+        });
+    </script>
+</body>
+</html>
