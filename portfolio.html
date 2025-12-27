@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Portfolio - Event Planners Tanzania</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Our Portfolio | Event Planners Tanzania - Legendary Events Gallery</title>
     <style>
+        /* === GOOSEBUMPS STYLES FOR PORTFOLIO PAGE === */
         :root {
-            --primary: #C41E3A;
-            --primary-dark: #9a162d;
-            --secondary: #FFD166;
-            --dark: #222222;
-            --light: #f8f8f8;
-            --gray: #666666;
-            --light-gray: #eeeeee;
-            --transition: all 0.3s ease;
+            --gold: #D4AF37;
+            --gold-glow: rgba(212, 175, 55, 0.3);
+            --deep-red: #C41E3A;
+            --midnight: #0A0A0F;
+            --charcoal: #1A1A1F;
+            --ivory: #FFFDF5;
+            --light-gold: #F5E8C8;
+            --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-gold: 0 0 40px var(--gold-glow);
         }
         
         * {
@@ -25,189 +25,157 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--midnight);
+            color: var(--ivory);
+            line-height: 1.7;
         }
         
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
+        /* === HEADER === */
+        .magical-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10000;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+        }
+        
+        .logo-magic {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-orb {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, var(--gold), var(--deep-red));
+            border-radius: 50%;
+        }
+        
+        .logo-text {
+            font-family: 'Georgia', serif;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gold), var(--ivory));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .magic-nav {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .magic-nav a {
+            color: var(--light-gold);
+            text-decoration: none;
             font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        h2 {
-            font-size: 2.2rem;
+            font-size: 15px;
+            padding: 10px 0;
             position: relative;
-            margin-bottom: 2rem;
-            padding-bottom: 10px;
         }
         
-        h2:after {
+        .magic-nav a.active {
+            color: var(--gold);
+        }
+        
+        .magic-nav a.active::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 70px;
-            height: 4px;
-            background-color: var(--primary);
-        }
-        
-        h2.text-center:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .container {
             width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+            height: 2px;
+            background: var(--gold);
         }
         
-        section {
-            padding: 80px 0;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            text-decoration: none;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(196, 30, 58, 0.2);
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--dark);
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        /* Hero */
+        /* === PAGE HERO === */
         .page-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            min-height: 60vh;
+            background: linear-gradient(rgba(10, 10, 15, 0.9), rgba(10, 10, 15, 0.7)),
+                        url('https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 120px 0 80px;
+            display: flex;
+            align-items: center;
+            padding: 150px 40px 100px;
+        }
+        
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
         
-        .page-hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+        .page-hero-content h1 {
+            font-size: 4rem;
+            background: linear-gradient(45deg, var(--ivory), var(--gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
         }
         
-        /* Portfolio Filter */
+        /* === PORTFOLIO FILTER === */
         .portfolio-filter {
             display: flex;
             justify-content: center;
+            gap: 20px;
+            padding: 40px;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 50px;
         }
         
         .filter-btn {
-            padding: 10px 25px;
-            background: white;
-            border: 2px solid var(--light-gray);
-            border-radius: 30px;
+            padding: 12px 30px;
+            background: rgba(26, 26, 31, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 50px;
+            color: var(--light-gold);
             font-weight: 600;
             cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition-slow);
         }
         
         .filter-btn.active,
         .filter-btn:hover {
-            background-color: var(--primary);
-            color: white;
-            border-color: var(--primary);
+            background: var(--gold);
+            color: var(--midnight);
+            border-color: var(--gold);
         }
         
-        /* Portfolio Grid */
+        /* === PORTFOLIO GRID === */
+        .portfolio-gallery {
+            padding: 0 40px 100px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-bottom: 50px;
         }
         
         .portfolio-item {
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
             height: 350px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
             cursor: pointer;
         }
         
@@ -215,7 +183,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.1);
         }
         
         .portfolio-overlay {
@@ -223,61 +195,64 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-            color: white;
-            padding: 30px 20px 20px;
-            transform: translateY(10px);
-            opacity: 0;
-            transition: var(--transition);
+            background: linear-gradient(to top, rgba(10, 10, 15, 0.95), transparent);
+            padding: 40px 30px 30px;
+            transform: translateY(100%);
+            transition: var(--transition-slow);
         }
         
         .portfolio-item:hover .portfolio-overlay {
             transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .portfolio-item:hover img {
-            transform: scale(1.05);
         }
         
         .portfolio-category {
             display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+            background: var(--gold);
+            color: var(--midnight);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
         }
         
-        /* Case Studies */
+        /* === CASE STUDIES === */
         .case-studies {
-            background-color: var(--light-gray);
+            padding: 100px 40px;
+            background: rgba(26, 26, 31, 0.5);
+        }
+        
+        .case-studies h2 {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--ivory);
+            margin-bottom: 60px;
         }
         
         .case-study-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            margin-top: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
         .case-study-card {
-            background-color: white;
-            border-radius: 8px;
+            background: rgba(26, 26, 31, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
+            transition: var(--transition-slow);
         }
         
         .case-study-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-gold);
         }
         
         .case-study-img {
-            height: 220px;
+            height: 200px;
             overflow: hidden;
         }
         
@@ -285,15 +260,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .case-study-card:hover .case-study-img img {
-            transform: scale(1.05);
         }
         
         .case-study-content {
-            padding: 25px;
+            padding: 30px;
         }
         
         .case-study-stats {
@@ -301,7 +271,7 @@
             justify-content: space-between;
             margin-top: 20px;
             padding-top: 20px;
-            border-top: 1px solid var(--light-gray);
+            border-top: 1px solid rgba(255, 253, 245, 0.1);
         }
         
         .stat-item {
@@ -311,323 +281,275 @@
         .stat-number {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--gold);
         }
         
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            position: relative;
-        }
-        
-        .lightbox-img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-        
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-        
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        
-        .lightbox-nav button {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            font-size: 2rem;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .lightbox-nav button:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 20px;
+        /* === FOOTER === */
+        .footer-magic {
+            background: rgba(10, 10, 15, 0.95);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 80px 40px 30px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto 50px;
         }
         
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
+        .footer-logo-section .logo-text {
+            font-size: 24px;
             margin-bottom: 20px;
         }
         
-        .copyright {
+        .footer-description {
+            color: rgba(255, 253, 245, 0.7);
+        }
+        
+        .footer-links h3 {
+            color: var(--gold);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 253, 245, 0.7);
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: rgba(255, 253, 245, 0.5);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 1200px) {
+            .portfolio-grid,
+            .case-study-grid,
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-            
-            .page-hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .portfolio-grid {
+            .portfolio-grid,
+            .case-study-grid,
+            .footer-content {
                 grid-template-columns: 1fr;
             }
             
-            .nav-links {
+            .header-container {
+                padding: 0 20px;
+                height: 80px;
+            }
+            
+            .magic-nav {
                 display: none;
+            }
+            
+            .page-hero-content h1 {
+                font-size: 3rem;
             }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">Event<span>Planners</span></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="booking.html">Book Now</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
+    <header class="magical-header">
+        <div class="header-container">
+            <div class="logo-magic">
+                <div class="logo-orb"></div>
+                <div class="logo-text">Event Planners Tanzania</div>
+            </div>
+            
+            <nav class="magic-nav">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="booking.html">Booking</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Page Hero -->
     <section class="page-hero">
-        <div class="container">
-            <h1>Our Portfolio</h1>
-            <p>Explore our recent work and get inspired for your next event</p>
+        <div class="page-hero-content">
+            <h1>Our Legendary Events</h1>
+            <p style="font-size: 1.2rem; color: rgba(255, 253, 245, 0.9);">
+                Explore our gallery of extraordinary events and get inspired for your next celebration.
+            </p>
         </div>
     </section>
 
-    <!-- Portfolio -->
-    <section class="portfolio">
-        <div class="container">
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">All Events</button>
-                <button class="filter-btn" data-filter="wedding">Weddings</button>
-                <button class="filter-btn" data-filter="corporate">Corporate</button>
-                <button class="filter-btn" data-filter="private">Private</button>
-                <button class="filter-btn" data-filter="cultural">Cultural</button>
-            </div>
-            
-            <div class="portfolio-grid">
-                <!-- Item 1 -->
-                <div class="portfolio-item" data-category="wedding" data-index="0">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Beach Wedding">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Wedding</span>
-                        <h3>Zanzibar Beach Wedding</h3>
-                        <p>Breathtaking beachfront ceremony for 150 guests with sunset reception</p>
-                    </div>
-                </div>
-                
-                <!-- Item 2 -->
-                <div class="portfolio-item" data-category="corporate" data-index="1">
-                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate Conference">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Corporate</span>
-                        <h3>Tech Conference 2023</h3>
-                        <p>3-day international conference for 500 attendees with exhibition hall</p>
-                    </div>
-                </div>
-                
-                <!-- Item 3 -->
-                <div class="portfolio-item" data-category="private" data-index="2">
-                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Birthday Party">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Private</span>
-                        <h3>50th Birthday Celebration</h3>
-                        <p>Elegant garden party with custom entertainment and gourmet dining</p>
-                    </div>
-                </div>
-                
-                <!-- Item 4 -->
-                <div class="portfolio-item" data-category="wedding cultural" data-index="3">
-                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Traditional Wedding">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Wedding</span>
-                        <h3>Traditional Maasai Wedding</h3>
-                        <p>Cultural celebration blending modern and traditional Tanzanian elements</p>
-                    </div>
-                </div>
-                
-                <!-- Item 5 -->
-                <div class="portfolio-item" data-category="corporate" data-index="4">
-                    <img src="https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Product Launch">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Corporate</span>
-                        <h3>Luxury Product Launch</h3>
-                        <p>Exclusive evening event for high-end brand introduction with celebrity guests</p>
-                    </div>
-                </div>
-                
-                <!-- Item 6 -->
-                <div class="portfolio-item" data-category="private" data-index="5">
-                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Anniversary Party">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Private</span>
-                        <h3>25th Anniversary Gala</h3>
-                        <p>Formal dinner celebration with live orchestra and custom decor</p>
-                    </div>
-                </div>
-                
-                <!-- Item 7 -->
-                <div class="portfolio-item" data-category="corporate" data-index="6">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate Awards">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Corporate</span>
-                        <h3>Annual Awards Gala</h3>
-                        <p>Black-tie awards ceremony for 300 corporate executives</p>
-                    </div>
-                </div>
-                
-                <!-- Item 8 -->
-                <div class="portfolio-item" data-category="wedding" data-index="7">
-                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Garden Wedding">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">Wedding</span>
-                        <h3>Botanical Garden Wedding</h3>
-                        <p>Romantic garden ceremony with floral arch and string quartet</p>
-                    </div>
+    <!-- Portfolio Filter -->
+    <div class="portfolio-filter">
+        <button class="filter-btn active" data-filter="all">All Events</button>
+        <button class="filter-btn" data-filter="weddings">Weddings</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+        <button class="filter-btn" data-filter="private">Private</button>
+        <button class="filter-btn" data-filter="cultural">Cultural</button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-gallery">
+        <div class="portfolio-grid">
+            <!-- Item 1 -->
+            <div class="portfolio-item" data-category="weddings">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Wedding">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">WEDDING</span>
+                    <h3 style="color: var(--ivory); margin-bottom: 10px;">Zanzibar Beach Wedding</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">Breathtaking beachfront ceremony</p>
                 </div>
             </div>
             
-            <div class="text-center">
-                <a href="booking.html" class="btn btn-primary">Start Planning Your Event</a>
+            <!-- Item 2 -->
+            <div class="portfolio-item" data-category="corporate">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Corporate">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">CORPORATE</span>
+                    <h3 style="color: var(--ivory); margin-bottom: 10px;">Tech Conference 2023</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">3-day international conference</p>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="portfolio-item" data-category="private">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Birthday">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">PRIVATE</span>
+                    <h3 style="color: var(--ivory); margin-bottom: 10px;">50th Birthday Celebration</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">Elegant garden party</p>
+                </div>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="portfolio-item" data-category="weddings cultural">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Traditional Wedding">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">CULTURAL</span>
+                    <h3 style="color: var(--ivory); margin-bottom: 10px;">Traditional Maasai Wedding</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">Cultural celebration</p>
+                </div>
+            </div>
+            
+            <!-- Item 5 -->
+            <div class="portfolio-item" data-category="corporate">
+                <img src="https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Product Launch">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">CORPORATE</span>
+                    <h3 style="color: var(--ivory); margin-bottom: 10px;">Luxury Product Launch</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">Exclusive evening event</p>
+                </div>
+            </div>
+            
+            <!-- Item 6 -->
+            <div class="portfolio-item" data-category="private">
+                <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Anniversary">
+                <div class="portfolio-overlay">
+                    <span class="portfolio-category">PRIVATE</span>
+                    <h3 style="color: var(--ivory); margin-bottom: 10px;">25th Anniversary Gala</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">Formal dinner celebration</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Case Studies -->
     <section class="case-studies">
-        <div class="container">
-            <h2 class="text-center">Event Case Studies</h2>
-            <p class="text-center">Detailed insights into some of our most memorable events</p>
+        <h2>Event Case Studies</h2>
+        
+        <div class="case-study-grid">
+            <!-- Case Study 1 -->
+            <div class="case-study-card">
+                <div class="case-study-img">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Destination Wedding">
+                </div>
+                <div class="case-study-content">
+                    <h3 style="color: var(--ivory); margin-bottom: 15px;">Destination Wedding in Serengeti</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">
+                        Planned a 3-day wedding celebration in the heart of Serengeti for an international couple.
+                    </p>
+                    <div class="case-study-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">120</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Guests</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Days</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Vendors</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="case-study-grid">
-                <!-- Case Study 1 -->
-                <div class="case-study-card">
-                    <div class="case-study-img">
-                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Destination Wedding">
-                    </div>
-                    <div class="case-study-content">
-                        <h3>Destination Wedding in Serengeti</h3>
-                        <p>Planned a 3-day wedding celebration in the heart of Serengeti for an international couple, coordinating guests from 12 different countries.</p>
-                        <div class="case-study-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">120</div>
-                                <div>Guests</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">3</div>
-                                <div>Days</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">15</div>
-                                <div>Vendors</div>
-                            </div>
+            <!-- Case Study 2 -->
+            <div class="case-study-card">
+                <div class="case-study-img">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Conference">
+                </div>
+                <div class="case-study-content">
+                    <h3 style="color: var(--ivory); margin-bottom: 15px;">East Africa Tech Summit</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">
+                        Managed all aspects of a major tech conference for 800+ attendees.
+                    </p>
+                    <div class="case-study-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">850</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Attendees</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">45</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Speakers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Days</div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Case Study 2 -->
-                <div class="case-study-card">
-                    <div class="case-study-img">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate Conference">
-                    </div>
-                    <div class="case-study-content">
-                        <h3>East Africa Tech Summit</h3>
-                        <p>Managed all aspects of a major tech conference including speaker coordination, exhibition hall, and networking events for 800+ attendees.</p>
-                        <div class="case-study-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">850</div>
-                                <div>Attendees</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">45</div>
-                                <div>Speakers</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">2</div>
-                                <div>Days</div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            
+            <!-- Case Study 3 -->
+            <div class="case-study-card">
+                <div class="case-study-img">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Charity Gala">
                 </div>
-                
-                <!-- Case Study 3 -->
-                <div class="case-study-card">
-                    <div class="case-study-img">
-                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Charity Gala">
-                    </div>
-                    <div class="case-study-content">
-                        <h3>Annual Charity Gala Dinner</h3>
-                        <p>Organized a black-tie charity event that raised over $250,000 for local children's education initiatives, featuring celebrity performances.</p>
-                        <div class="case-study-stats">
-                            <div class="stat-item">
-                                <div class="stat-number">$250K</div>
-                                <div>Raised</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">300</div>
-                                <div>Guests</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number">1</div>
-                                <div>Night</div>
-                            </div>
+                <div class="case-study-content">
+                    <h3 style="color: var(--ivory); margin-bottom: 15px;">Annual Charity Gala Dinner</h3>
+                    <p style="color: rgba(255, 253, 245, 0.8);">
+                        Organized a black-tie charity event that raised over $250,000 for education.
+                    </p>
+                    <div class="case-study-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">$250K</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Raised</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">300</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Guests</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1</div>
+                            <div style="color: rgba(255, 253, 245, 0.7); font-size: 0.9rem;">Night</div>
                         </div>
                     </div>
                 </div>
@@ -635,147 +557,94 @@
         </div>
     </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close" id="lightbox-close">&times;</span>
-            <img class="lightbox-img" id="lightbox-img" src="" alt="">
-            <div class="lightbox-nav">
-                <button id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-                <button id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+    <!-- Footer -->
+    <footer class="footer-magic">
+        <div class="footer-content">
+            <div class="footer-logo-section">
+                <div class="logo-text">Event Planners Tanzania</div>
+                <p class="footer-description">
+                    Creating unforgettable events across Tanzania since 2011.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Event Types</h3>
+                <ul>
+                    <li><a href="portfolio.html?filter=weddings">Weddings</a></li>
+                    <li><a href="portfolio.html?filter=corporate">Corporate</a></li>
+                    <li><a href="portfolio.html?filter=private">Private</a></li>
+                    <li><a href="portfolio.html?filter=cultural">Cultural</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+255789456123">+255 789 456 123</a></li>
+                    <li><a href="mailto:info@eventplannerstanzania.co.tz">Email Us</a></li>
+                    <li><a href="contact.html">Contact Form</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <div class="footer-logo">Event Planners Tanzania</div>
-                    <p>Creating unforgettable events across Tanzania since 2011.</p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <p>Plot 123, Mlimani City<br>Dar es Salaam, Tanzania<br>+255 789 456 123<br>info@eventplannerstanzania.co.tz</p>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Event Planners Tanzania. All Rights Reserved.</p>
-            </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Event Planners Tanzania. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
-        // Portfolio filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                const filterValue = btn.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    const itemCategories = item.getAttribute('data-category').split(' ');
+        // Portfolio Filtering
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year
+            document.querySelector('.footer-bottom p').innerHTML = 
+                document.querySelector('.footer-bottom p').innerHTML.replace('2023', new Date().getFullYear());
+            
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
                     
-                    if (filterValue === 'all' || itemCategories.includes(filterValue)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
+                    const filterValue = button.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        const itemCategories = item.getAttribute('data-category').split(' ');
+                        
+                        if (filterValue === 'all' || itemCategories.includes(filterValue)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
                 });
             });
-        });
-        
-        // Lightbox functionality
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxClose = document.getElementById('lightbox-close');
-        const lightboxPrev = document.getElementById('lightbox-prev');
-        const lightboxNext = document.getElementById('lightbox-next');
-        
-        let currentImageIndex = 0;
-        const portfolioImages = Array.from(portfolioItems);
-        
-        // Open lightbox when clicking on portfolio item
-        portfolioItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                const imgSrc = item.querySelector('img').src;
-                lightboxImg.src = imgSrc;
-                currentImageIndex = index;
-                lightbox.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        // Close lightbox
-        lightboxClose.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Close lightbox when clicking outside image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Navigation
-        lightboxPrev.addEventListener('click', (e) => {
-            e.stopPropagation();
-            currentImageIndex = (currentImageIndex - 1 + portfolioImages.length) % portfolioImages.length;
-            updateLightboxImage();
-        });
-        
-        lightboxNext.addEventListener('click', (e) => {
-            e.stopPropagation();
-            currentImageIndex = (currentImageIndex + 1) % portfolioImages.length;
-            updateLightboxImage();
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (lightbox.style.display === 'flex') {
-                if (e.key === 'Escape') {
-                    lightbox.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                } else if (e.key === 'ArrowLeft') {
-                    currentImageIndex = (currentImageIndex - 1 + portfolioImages.length) % portfolioImages.length;
-                    updateLightboxImage();
-                } else if (e.key === 'ArrowRight') {
-                    currentImageIndex = (currentImageIndex + 1) % portfolioImages.length;
-                    updateLightboxImage();
+            
+            // Check URL for filter parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const filterParam = urlParams.get('filter');
+            if (filterParam) {
+                const button = document.querySelector(`.filter-btn[data-filter="${filterParam}"]`);
+                if (button) {
+                    button.click();
                 }
-            }
-        });
-        
-        function updateLightboxImage() {
-            const imgSrc = portfolioImages[currentImageIndex].querySelector('img').src;
-            lightboxImg.src = imgSrc;
-        }
-        
-        // Set current year in copyright
-        document.addEventListener('DOMContentLoaded', () => {
-            const year = new Date().getFullYear();
-            const copyrightElement = document.querySelector('.copyright p');
-            if(copyrightElement) {
-                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2023', year);
             }
         });
     </script>
